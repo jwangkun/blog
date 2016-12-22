@@ -1,4 +1,4 @@
-<code class="language-yum hljs http">language: node_js
+language: node_js
 node_js: stable
  
 # S: Build Lifecycle
@@ -28,4 +28,4 @@ branches:
 env:
  global:
    - GH_REF: github.com/jwangkun/jwangkun.github.io.git
-</code>
+
