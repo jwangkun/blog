@@ -1,7 +1,7 @@
 ---
 title: Travis CI自动部署你的Hexo博客到Github
 date: 2016-12-22 13:26:07
-tags:
+tags: Travis CI
 ---
 
 ## 简介
