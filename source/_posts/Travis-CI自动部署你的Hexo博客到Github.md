@@ -48,7 +48,6 @@ blog-source：是博客的源代码
 
 当然如果你以前没用使用过，所以你登录完是没有上图红框内的内容的，这里是因为我在写这篇博客前已经使用了，所以会有这些内容
 
-接下来我们点击My RepZ喎�"/kf/ware/vc/" target="_blank" class="keylink">vc2l0b3JpZXPF1LHftcQro6zS4su8ysfM7bzT0ru49tKq19S2r7m5vai1xLLWv+KjrMjnz8LNvKO6PC9wPg0KPHA+PGltZyBhbHQ9"" src="/uploadfile/Collfiles/20160505/20160505091113837.png" title="\" />
 
 点击后就会来到如下界面：
 
