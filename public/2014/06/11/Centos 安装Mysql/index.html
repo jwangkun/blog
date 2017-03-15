@@ -1,0 +1,579 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Centos，Mysql," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Centos 6.6下安装Mysql很简单，先查看一下yum源里面的mysql以及版本yum list mysql-server
+当只有一个时候就可以直接（如果有多个的时候，安装带上版本号）yum install mysql-server进行安装
+安装完成后，启动mysql：先启动Mysql服务service mysqld start
+设置Mysql开机启动chkconfig mysqld on">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos挂载数据盘">
+<meta property="og:url" content="http://yoursite.com/2014/06/11/Centos 安装Mysql/index.html">
+<meta property="og:site_name" content="Fancy">
+<meta property="og:description" content="Centos 6.6下安装Mysql很简单，先查看一下yum源里面的mysql以及版本yum list mysql-server
+当只有一个时候就可以直接（如果有多个的时候，安装带上版本号）yum install mysql-server进行安装
+安装完成后，启动mysql：先启动Mysql服务service mysqld start
+设置Mysql开机启动chkconfig mysqld on">
+<meta property="og:updated_time" content="2016-04-19T02:49:23.490Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Centos挂载数据盘">
+<meta name="twitter:description" content="Centos 6.6下安装Mysql很简单，先查看一下yum源里面的mysql以及版本yum list mysql-server
+当只有一个时候就可以直接（如果有多个的时候，安装带上版本号）yum install mysql-server进行安装
+安装完成后，启动mysql：先启动Mysql服务service mysqld start
+设置Mysql开机启动chkconfig mysqld on">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Centos挂载数据盘 | Fancy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Fancy</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">A Java Developer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Centos挂载数据盘
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-06-11T00:00:00+08:00" content="2014-06-11">
+              2014-06-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Centos 6.6下安装Mysql很简单，先查看一下yum源里面的mysql以及版本<br>yum list mysql-server</p>
+<p>当只有一个时候就可以直接（如果有多个的时候，安装带上版本号）<br>yum install mysql-server<br>进行安装</p>
+<p>安装完成后，启动mysql：<br>先启动Mysql服务<br>service mysqld start</p>
+<p>设置Mysql开机启动<br>chkconfig mysqld on</p>
+<p>检查一下开启启动情况：<br>chkconfig –list</p>
+<p>MYSQL默认的数据文件存储目录为/var/lib/mysql。假如要把目录移到/home/data下需要进行下面几步：</p>
+<p>1、home目录下建立data目录</p>
+<p>cd /homemkdir data<br>2、把MySQL服务进程停掉：</p>
+<p>mysqladmin -u root -p shutdown<br>3、把/var/lib/mysql整个目录移到/home/data</p>
+<p>mv /var/lib/mysql　/home/data/<br>这样就把MySQL的数据文件移动到了/home/data/mysql下</p>
+<p>4、找到my.cnf配置文件</p>
+<p>如果/etc/目录下没有my.cnf配置文件，请到/usr/share/mysql/下找到*.cnf文件，拷贝其中一个到/etc/并改名为my.cnf)中。命令如下：</p>
+<p>[root@test1 mysql]# cp /usr/share/mysql/my-medium.cnf　/etc/my.cnf<br>5、编辑MySQL的配置文件/etc/my.cnf</p>
+<p>为保证MySQL能够正常工作，需要指明mysql.sock文件的产生位置。修改socket=/var/lib/mysql/mysql.sock一行中等号右边的值为：/home/mysql/mysql.sock 。操作如下：</p>
+<p>vi　 my.cnf　 (用vi工具编辑my.cnf文件，找到下列数据修改之)# The MySQL server[mysqld]　 port　= 3306#socket　 = /var/lib/mysql/mysql.sock（原内容，为了更稳妥用“#”注释此行）socket　 = /home/data/mysql/mysql.sock　（加上此行）<br>6、修改MySQL启动脚本/etc/init.d/mysql</p>
+<p>最后，需要修改MySQL启动脚本/etc/init.d/mysql，把其中datadir=/var/lib/mysql一行中，等号右边的路径改成你现在的实际存放路径：home/data/mysql。</p>
+<p>[root@test1 etc]# vi　/etc/init.d/mysql#datadir=/var/lib/mysql（注释此行）datadir=/home/data/mysql （加上此行）</p>
+<p>如果是CentOS还要改 /usr/bin/mysqld_safe 相关文件位置；</p>
+<p>最后 做一个mysql.sock 链接：<br>ln -s /home/data/mysql/mysql.sock /var/lib/mysql/mysql.sock</p>
+<p>7、重新启动MySQL服务<br>/etc/init.d/mysqld　start</p>
+<p>如果工作正常移动就成功了，否则对照前面的7步再检查一下。还要注意目录的属主和权限。<br>复制内容到剪贴板</p>
+<p>注意事项;<br>1.乱码问题<br>找一个配置文件，复制到/etc/目录，命名为my.cnf<br>（有时候没有my.cnf）<br>cp /usr/share/doc/mysql-server-5.1.73/my-medium.cnf /etc/my.cnf</p>
+<p>vim my.cnf<br>在[client]和[mysqld]下面都添加上<br>default-character-set=utf8<br>最后重新启动服务就可以了<br>service mysqld restart</p>
+<p>2.设置Mysql远程访问<br>grant all privileges on <em>.</em> to ‘root’@’%’ identified by ‘123456’ with grant option;</p>
+<p>3.修改mysql数据存储路径</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Centos，Mysql/" rel="tag">#Centos，Mysql</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/01/02/Git的安装和配置/" rel="next" title="Git的安装和配置">
+                <i class="fa fa-chevron-left"></i> Git的安装和配置
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/06/12/如何看待不如你的人比你混的好？/" rel="prev" title="如何看待不如你的人比你混的好？">
+                如何看待不如你的人比你混的好？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Fancy" />
+          <p class="site-author-name" itemprop="name">Fancy</p>
+          <p class="site-description motion-element" itemprop="description">A Java Developer</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fancy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

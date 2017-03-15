@@ -1,0 +1,617 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="phpMyAdmin," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="本文地址：https://linux.cn/article-4526-1.html
+
+问题:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？
+
+phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如Admi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何在CentOS上安装phpMyAdmin">
+<meta property="og:url" content="http://yoursite.com/2016/04/19/如何在CentOS上安装phpMyAdmin/index.html">
+<meta property="og:site_name" content="Fancy">
+<meta property="og:description" content="本文地址：https://linux.cn/article-4526-1.html
+
+问题:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？
+
+phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如Admi">
+<meta property="og:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105616takjivihinhipzmy.jpg">
+<meta property="og:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105620ud2pex6zfm2mmopf.jpg">
+<meta property="og:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105622slmakqel8lqm0hkl.jpg">
+<meta property="og:updated_time" content="2016-04-19T13:17:57.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何在CentOS上安装phpMyAdmin">
+<meta name="twitter:description" content="本文地址：https://linux.cn/article-4526-1.html
+
+问题:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？
+
+phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如Admi">
+<meta name="twitter:image" content="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105616takjivihinhipzmy.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 如何在CentOS上安装phpMyAdmin | Fancy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Fancy</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">A Java Developer</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何在CentOS上安装phpMyAdmin
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-19T21:17:14+08:00" content="2016-04-19">
+              2016-04-19
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文地址：<a href="https://linux.cn/article-4526-1.html" target="_blank" rel="external">https://linux.cn/article-4526-1.html</a></p>
+<blockquote>
+<p><strong>问题</strong>:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？</p>
+</blockquote>
+<p>phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如<a href="http://xmodulo.com/set-web-based-database-management-system-adminer.html" target="_blank" rel="external">Adminer</a>的轻量级数据库管理工具, 但是phpMyAdmin还是更加广泛应用于网站管理员之中来进行各种MySQL/MariaDB的管理任务。它支持几乎所有MySQL数据库／表的相关操作，比如浏览、创建、复制、删除、重命名、更改，还有MySQL用户/权限管理和数据库导入/导出。以下就是<strong>如何在CentOS 6或7上安装phpMyAdmin</strong>。</p>
+<p><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105616takjivihinhipzmy.jpg" alt=""></p>
+<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>在CentOS上安装phpMyAdmin，你第一步需要架设一台Web服务器(如Apache或nginx)，安装好MySQL/MariaDB数据库和PHP。根据你的偏好和需求，你可以从<a href="http://linux.cn/article-1567-1.html" target="_blank" rel="external">LAMP</a>和<a href="http://linux.cn/article-4314-1.html" target="_blank" rel="external">LEMP</a>中选择一种安装。</p>
+<p>另一个要求是允许在你的CentOS上安装EPEL库。如果你还没设置过请<a href="http://linux.cn/article-2324-1.html" target="_blank" rel="external">猛戳这里</a>。</p>
+<h3 id="在CentOS6或7上安装phpMyAdmin"><a href="#在CentOS6或7上安装phpMyAdmin" class="headerlink" title="在CentOS6或7上安装phpMyAdmin"></a>在CentOS6或7上安装phpMyAdmin</h3><p>一旦你设置了EPEL库，你就能轻松地用以下命令安装phpMyAdmin了。</p>
+<p>在CentOS 7上:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install phpmyadmin</span><br></pre></td></tr></table></figure>
+<p>在CentOS 7上:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install phpmyadmin php-mcrypt</span><br></pre></td></tr></table></figure>
+<h3 id="在CentOS-7上配置phpMyAdmin"><a href="#在CentOS-7上配置phpMyAdmin" class="headerlink" title="在CentOS 7上配置phpMyAdmin"></a>在CentOS 7上配置phpMyAdmin</h3><p>默认情况下，CentOS 7上的phpMyAdmin只允许从回环地址(127.0.0.1)访问。为了能远程连接，你需要改动它的配置。</p>
+<p>用文本编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉带有”Require ip XXXX”字样的代码行。会有四处这样的代码行，用”Require all granted”取而代之。重新改动过的配置文件如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/httpd/conf.d/phpMyAdmin.conf</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. . . . .&lt;Directory /usr/share/phpMyAdmin/&gt;   AddDefaultCharset UTF-8    &lt;IfModule mod_authz_core.c&gt;     # Apache 2.4     &lt;RequireAny&gt;       #Require ip 127.0.0.1       #Require ip ::1       Require all granted     &lt;/RequireAny&gt;   &lt;/IfModule&gt;   &lt;IfModule !mod_authz_core.c&gt;     # Apache 2.2     Order Deny,Allow     Deny from All     Allow from 127.0.0.1     Allow from ::1   &lt;/IfModule&gt;&lt;/Directory&gt; &lt;Directory /usr/share/phpMyAdmin/setup/&gt;   &lt;IfModule mod_authz_core.c&gt;     # Apache 2.4     &lt;RequireAny&gt;       #Require ip 127.0.0.1       #Require ip ::1       Require all granted     &lt;/RequireAny&gt;   &lt;/IfModule&gt;   &lt;IfModule !mod_authz_core.c&gt;     # Apache 2.2     Order Deny,Allow     Deny from All     Allow from 127.0.0.1     Allow from ::1   &lt;/IfModule&gt;&lt;/Directory&gt;. . . . .</span><br></pre></td></tr></table></figure>
+<p>最后，重启httpd使改动生效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl restart httpd</span><br></pre></td></tr></table></figure>
+<h3 id="在CentOS-6上配置phpMyAdmin"><a href="#在CentOS-6上配置phpMyAdmin" class="headerlink" title="在CentOS 6上配置phpMyAdmin"></a>在CentOS 6上配置phpMyAdmin</h3><p>默认情况下，CentOS 6上的phpMyAdmin是禁止从每个IP地址访问的。为了能远程连接，你需要改动它的配置。</p>
+<p>用文本编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉”Deny from all”字样的代码行。然后把”Allow from 127.0.0.1”字样的代码行改成”Allow from 0.0.0.0”。重新改动过的配置文件如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/httpd/conf.d/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory &quot;/usr/share/phpmyadmin&quot;&gt;  Order Deny,Allow#  Deny from all  Allow from 0.0.0.0&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
+<p>下一步是将phpMyAdmin的配置文件用blowfish加密工具加密。这一步需要加密cookie里的密码来作为基于cookie的部分认证。</p>
+<p>用文本编辑器打开如下路径所示的文件并且用blowfish设置一个随机密码，如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /usr/share/phpmyadmin/config.inc.php</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cfg[&apos;blowfish_secret&apos;] = &apos;kd5G&#125;d33aXDc50!&apos;; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */</span><br></pre></td></tr></table></figure>
+<p>最后，重启httpd使改动生效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service httpd restart</span><br></pre></td></tr></table></figure>
+<h3 id="测试phpMyAdmin"><a href="#测试phpMyAdmin" class="headerlink" title="测试phpMyAdmin"></a>测试phpMyAdmin</h3><p>测试phpMyAdmin是否设置成功，访问这个页面：http://<web-server-ip-addresss>/phpmyadmin</web-server-ip-addresss></p>
+<p><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105620ud2pex6zfm2mmopf.jpg" alt=""></p>
+<p>你应该能通过Web界面来记录下任何MySQL用户(比如root)和管理MySQL/MariaDB的数据库/表。</p>
+<p><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105622slmakqel8lqm0hkl.jpg" alt=""></p>
+<h3 id="疑难解答"><a href="#疑难解答" class="headerlink" title="疑难解答"></a>疑难解答</h3><p>这里有一些在CentOS上安装phpMyAdmin的过程中遇到的一些问题解决方法。</p>
+<ol>
+<li><p>当你在浏览器里尝试连接phpMyAdmin页面的时候，你看到”403 Forbidding”错误：</p>
+<p>You don’t have permission to access /phpMyAdmin on this server.</p>
+<p>发生这种错误是因为phpMyAdmin默认阻止了IP地址远程连接。要修复这种错误，你需要编辑它的配置文件来允许远程连接。具体操作见上。</p>
+</li>
+<li><p>当你连接phpMyAdmin页面时，你看见”The configuration file now needs a secret passphrase (blowfish_secret).”信息，并且你无法登录。</p>
+<p>要修复这种错误，你需要编辑 /usr/share/phpmyadmin/config.inc.php 这个文件来添加一个随机的blowfish密码，然后重启httpd，如下所示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cfg[&apos;blowfish_secret&apos;] = &apos;kd5G&#125;d33aXDc50!&apos;; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service httpd restart (CentOS 6)$ sudo systemctl restart httpd (CentOS 7)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当你连接phpMyAdmin页面时，你看见”Cannot load mcrypt extension. Please check your PHP configuration”错误信息。</p>
+<p>要修复这种错误，要安装下面这个包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install php-mcrypt</span><br></pre></td></tr></table></figure>
+<p>然后重启httpd：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service httpd restart (CentOS 6)$ sudo systemctl restart httpd (CentOS 7)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/phpMyAdmin/" rel="tag">#phpMyAdmin</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/ZeroNet搭建全球网站/" rel="next" title="ZeroNet搭建全球网站">
+                <i class="fa fa-chevron-left"></i> ZeroNet搭建全球网站
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/20/mysql主从同步/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Fancy" />
+          <p class="site-author-name" itemprop="name">Fancy</p>
+          <p class="site-description motion-element" itemprop="description">A Java Developer</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前提"><span class="nav-number">1.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在CentOS6或7上安装phpMyAdmin"><span class="nav-number">2.</span> <span class="nav-text">在CentOS6或7上安装phpMyAdmin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在CentOS-7上配置phpMyAdmin"><span class="nav-number">3.</span> <span class="nav-text">在CentOS 7上配置phpMyAdmin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在CentOS-6上配置phpMyAdmin"><span class="nav-number">4.</span> <span class="nav-text">在CentOS 6上配置phpMyAdmin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试phpMyAdmin"><span class="nav-number">5.</span> <span class="nav-text">测试phpMyAdmin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#疑难解答"><span class="nav-number">6.</span> <span class="nav-text">疑难解答</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fancy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
