@@ -4,8 +4,8 @@
 
 # Site
 title: Fancy
-subtitle:
-description: Just a Blog
+subtitle: A Java Developer
+description: A Java Developer
 author: Fancy
 language: zh-Hans
 timezone:
@@ -64,22 +64,11 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
-# 分页
-index_generator:
-  per_page: 5
 
-archive_generator:
-  per_page: 20
-  yearly: true
-  monthly: true
-
-tag_generator:
-  per_page: 10
-  
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: https://github.com/jwangkun/jwangkun.github.io.git
-  branch: master
-
+- type: git
+  repo: https://git.coding.net/jwangkun/jwangkun.git,coding-pages
