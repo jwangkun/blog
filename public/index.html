@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -27,7 +27,9 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -59,52 +61,70 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <meta name="keywords" content="fancy " />
 
 
 
 
 
 
-<meta name="description" content="A Java Developer">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Just a Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fancy">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Fancy">
-<meta property="og:description" content="A Java Developer">
+<meta property="og:description" content="Just a Blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fancy">
-<meta name="twitter:description" content="A Java Developer">
+<meta name="twitter:description" content="Just a Blog">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Muse',
+    root: '/',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
 
   <title> Fancy </title>
 </head>
@@ -133,7 +153,7 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
+      <div class="header-inner"><div class="site-meta custom-logo">
   
 
   <div class="custom-logo-site-title">
@@ -143,7 +163,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">A Java Developer</p>
+  <p class="site-subtitle"></p>
 </div>
 
 <div class="site-nav-toggle">
@@ -164,9 +184,19 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -174,7 +204,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -184,7 +214,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -197,6 +227,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -211,13 +243,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/22/Travis-CI自动部署你的Hexo博客到Github/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fancy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Fancy">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Fancy" src="http://ww4.sinaimg.cn/large/8bb65895gw1fa39km2y57j20h60h6my0.jpg">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -229,8 +274,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/26/MyBatis逆向工程代码生成工具/" itemprop="url">
-                  MyBatis逆向工程代码生成工具
+                <a class="post-title-link" href="/2016/12/22/Travis-CI自动部署你的Hexo博客到Github/" itemprop="url">
+                  Travis CI自动部署你的Hexo博客到Github
                 </a>
               
             
@@ -239,18 +284,31 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-26T16:49:47+08:00" content="2016-04-26">
-              2016-04-26
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-22T13:26:07+08:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
           </span>
 
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/22/Travis-CI自动部署你的Hexo博客到Github/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/22/Travis-CI自动部署你的Hexo博客到Github/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -260,6 +318,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -273,16 +334,19 @@
       
         
           
-            <p>介绍：<br><em>Code generator for MyBatis and iBATIS.</em></p>
-<p><em>It will generate code for all versions of MyBatis, and versions of iBATIS after version 2.2.0. It will introspect a database table (or many tables) and will generate artifacts that can be used to access the table(s). This lessens the initial nuisance of setting up objects and configuration files to interact with database tables. MBG seeks to make a major impact on the large percentage of database operations that are simple CRUD (Create, Retrieve, Update, Delete).</em></p>
-<p>意思很简单，就是该工具可以逆向生成持久层的基本代码。<br>OK，我们开始操作吧！<br>1.新建文件夹mybatis-generato，用于存放jar包，已经生产的代码<br>2.下载工具，解压，将lib包放进刚才新建的目录，<strong>以及数据库驱动jar</strong><br>下载地址：<a href="https://github.com/mybatis/generator/releases/tag/mybatis-generator-1.3.2" target="_blank" rel="external">https://github.com/mybatis/generator/releases/tag/mybatis-generator-1.3.2</a><br>3.创建generatorConfig.xml文件，复制下面的代码按照注释修改对应的值即可<br>XML文件参考官方配置以及说明：<a href="http://mybatis.github.io/generator/configreference/xmlconfig.html" target="_blank" rel="external">http://mybatis.github.io/generator/configreference/xmlconfig.html</a><br>*&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>&lt;!DOCTYPE generatorConfiguration PUBLIC “-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN”<br>       “<a href="http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;" target="_blank" rel="external">http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</a></p>
-<p><generatorconfiguration><br>   <!-- 数据库驱动包位置 (需要根据自己的路径修改)--><br>   <classpathentry location="D:\Java\tools\mybatis-generato/mysql-connector-java-5.1.26-bin.jar"><br>   <context id="Tables" targetruntime="MyBatis3"><br>       <commentgenerator><br>           <property name="suppressAllComments" value="true"><br>       </property></commentgenerator><br>       <!-- 数据库链接URL、用户名、密码 （定制修改）--><br>       <jdbcconnection driverclass="com.mysql.jdbc.Driver" connectionurl="jdbc:mysql://localhost:3306/chenyi" userid="root" password="root"></jdbcconnection><br>       <javatyperesolver><br>           <property name="forceBigDecimals" value="false"><br>       </property></javatyperesolver><br>       <!-- 生成模型的包名和位置 （targetPackage和targetProject根据自己要求修改）--><br>       <javamodelgenerator targetpackage="com.fh.entity.cms_categories" targetproject="D:\Java\tools\mybatis-generato\src"><br>           <property name="enableSubPackages" value="true"><br>           <property name="trimStrings" value="true"><br>       </property></property></javamodelgenerator><br>       <!-- 生成的映射文件包名和位置 （targetPackage和targetProject根据自己要求修改）--><br>       <sqlmapgenerator targetpackage="com.fh.mapper" targetproject="D:\Java\tools\mybatis-generato\src"><br>           <property name="enableSubPackages" value="true"><br>       </property></sqlmapgenerator><br>       <!-- 生成DAO的包名和位置 （targetPackage和targetProject根据自己要求修改）--><br>       <javaclientgenerator type="XMLMAPPER" targetpackage="com.fh.dao.cms_categories" targetproject="D:\Java\tools\mybatis-generato\src"><br>           <property name="enableSubPackages" value="true"><br>       </property></javaclientgenerator><br>       <!-- 要生成那些表(更改tableName和domainObjectName就可以，多个表的话复制table标签在后边排列即可) --><br>       <table tablename="cms_categories" domainobjectname="cms_categories" enablecountbyexample="false" enableupdatebyexample="false" enabledeletebyexample="false" enableselectbyexample="false" selectbyexamplequeryid="false"><br>   </table></context><br></classpathentry></generatorconfiguration>*<br>4.运行cmd命令，切换到mybatis-generato目录，执行java -jar mybatis-generator-core-1.3.2.jar -configfile generator.xml -overwrite<br>好了，到你设置的目录里去找你的代码去吧！</p>
-
-          
+          简介这年头要是没有个博客都不好意思给别人说你是程序员，我用XX笔记呀，不行吗？不行，这玩意儿要么不能公开分享，要么公开分享要会员，现在到处都是开源，自己学到了东西都不能分享给需要帮助的人，真是伤心呀。那么今天就来聊聊当你用Hexo搭建了博客，怎么自动更新呢，大家都知道Hexo是需要手动生成HTML静
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/22/Travis-CI自动部署你的Hexo博客到Github/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
-    
+
     <div>
       
     </div>
@@ -290,6 +354,7 @@
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -308,13 +373,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/21/Git常用命令/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fancy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Fancy">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Fancy" src="http://ww4.sinaimg.cn/large/8bb65895gw1fa39km2y57j20h60h6my0.jpg">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -326,8 +404,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/20/mysql主从同步/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2016/12/21/Git常用命令/" itemprop="url">
+                  Git常用命令
                 </a>
               
             
@@ -336,18 +414,31 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T10:03:08+08:00" content="2016-04-20">
-              2016-04-20
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T21:58:38+08:00">
+                2016-12-21
+              </time>
+            
+
+            
+
+            
           </span>
 
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/21/Git常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/Git常用命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -357,6 +448,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -370,26 +464,20 @@
       
         
           
-            <p>一、主从服务器分别作以下操作：<br>1.1、版本一致<br>1.2、初始化表，并在后台启动MySQL<br>1.3、修改root的密码<br>二、环境<br>Master：master<br>操作系统：Centos 6.3<br>IP：192.168.3.100<br>MySQL版本：5.6.13-log<br>slave：slave操作系统Centos 6.3<br>slave操作系统<br>IP：192.168.3.2<br>MySQL版本<br>5.6.13-log<br>三、修改主服务器master:</p>
-<p>#vi /etc/my.cnf<br>[mysqld]<br>log-bin=mysql-bin //[必须]启用二进制日志<br>server-id=100 //[必须]服务器唯一ID，默认是1，一般取IP最后一段</p>
-<p>四、修改从服务器slave:</p>
-<p>#vi /etc/my.cnf<br>[mysqld]<br>log-bin=mysql-bin //[必须]启用二进制日志<br>server-id=2 //[必须]服务器唯一ID，默认是1，一般取IP最后一段<br>五、重启两台服务器的mysql<br>/etc/init.d/mysql restart<br>六、在主服务器上建立帐户并授权slave:</p>
-<p>一般不用root帐号，“%”表示所有客户端都可能连，只要帐号，密码正确，此处可用具体客户端IP代替，如192.168.3.216，加强安全。在这里使用localhost。<br>七、登录主服务器的mysql，查询master的状态</p>
-<p>注：执行完此步骤后不要再操作主服务器MYSQL，防止主服务器状态值变化<br>八、配置从服务器slave：<br>配置的时候可以先关掉slave服务器复制功能。<br>Mysql&gt;startslave;</p>
-<p>然后在启动<br>Mysql&gt;startslave; //启动从服务器复制功能<br>九、检查从服务器复制功能状态：</p>
-<p>mysql&gt; show slave status\G</p>
-<p>如果Slave_IO_Running、Slave_SQL_Running状态为Yes则表明设置成功。<br>十、主从服务器测试：<br>主服务器Mysql，建立数据库，并在这个库中建表插入一条数据：<br>在主服务器上面新建一个表，</p>
-<p>在从服务器查看是否同步过来？？？？</p>
-<p>说明已经配置成功。<br>小节：<br>       这次配主从数据库，费了我两天的功夫看了一下这方面的知识。<br>       看网上的资料都是一个版本的，<br>       问题一：CentOS下安装官方RPM包的MySQL后找不到my.cnf<br>       我一直在想个问题，为什么没有这个文件而MySQL却也能正常启动和使用，这个有两个说法：<br>1、  my.cnf只是MySQL启动时的一个参数而已，可以没有它，这时MySQL会有内置的默认参数启动。<br>2、  MySQL在启动时自动使用/usr/share/mysql/my-default.cnf文件，这种说法仅限于rpm包安装的MySQL<br>cp /usr/share/mysql/my-default.cnf/etc/my.cnf<br>问题二：配置从服务器Slave_IO_Running=NO<br>解决方法：<br>Mysql &gt; stopslave;<br>Mysql &gt; setglobal sql_slave_skip_counter =1 ;<br>Mysql &gt; startslave;</p>
-<p>问题三：Slave_IO_Running=NO的问题。<br>       这个问题是我研究最长的一个问题，找资料看文档就是不知道出现什么错误。但是在后来配成功之后，才知道问题出现在什么地方。有人说是出现这类错误有三个原因。第一个原因是网络问题，第二个是my.cnf配置问题，但是我感觉第二个的原因太笼统了，我没遇到过类似问题，第三个问题是权限问题，我的问题出现在第三步，始终找不到错误原因。最后看到一篇博文说这个错误就是IO进程没连接上，想办法连接上，把与主的pos和文件一定要对，然后重新加载下数据。<br>具体步骤：<br>slave stop;<br>无奈想到在从服务器中用到</p>
-<p>注：master_log_file=’ mysql-bin.000005’,MASTER_LOG_POS=328;是从主的上面查出来的：showmaster status\G;<br>slave start;<br>问题又出现了，</p>
-<p>彻底要疯了。。。。。这是为啥呢？？？<br>百思不得其解时，重启从服务器竟然链接成功了。。</p>
-
-          
+          $ git clone #克隆远程版本库$ git init #初始化本地版本库修改和提交
+$ git status #查看状态$ git diff #查看变更内容$ git add . #跟踪所有改动过的文件$ git add #跟踪指定的文件$ git mv #文件改名$ git rm #删除文
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/21/Git常用命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
-    
+
     <div>
       
     </div>
@@ -397,6 +485,7 @@
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -415,13 +504,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/21/关于网站多少带宽合适/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fancy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Fancy">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Fancy" src="http://ww4.sinaimg.cn/large/8bb65895gw1fa39km2y57j20h60h6my0.jpg">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -433,8 +535,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/19/如何在CentOS上安装phpMyAdmin/" itemprop="url">
-                  如何在CentOS上安装phpMyAdmin
+                <a class="post-title-link" href="/2016/12/21/关于网站多少带宽合适/" itemprop="url">
+                  关于网站多少带宽合适
                 </a>
               
             
@@ -443,18 +545,31 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-19T21:17:14+08:00" content="2016-04-19">
-              2016-04-19
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-21T21:53:58+08:00">
+                2016-12-21
+              </time>
+            
+
+            
+
+            
           </span>
 
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/21/关于网站多少带宽合适/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/关于网站多少带宽合适/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -464,6 +579,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -477,68 +595,19 @@
       
         
           
-            <p>本文地址：<a href="https://linux.cn/article-4526-1.html" target="_blank" rel="external">https://linux.cn/article-4526-1.html</a></p>
-<blockquote>
-<p><strong>问题</strong>:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？</p>
-</blockquote>
-<p>phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如<a href="http://xmodulo.com/set-web-based-database-management-system-adminer.html" target="_blank" rel="external">Adminer</a>的轻量级数据库管理工具, 但是phpMyAdmin还是更加广泛应用于网站管理员之中来进行各种MySQL/MariaDB的管理任务。它支持几乎所有MySQL数据库／表的相关操作，比如浏览、创建、复制、删除、重命名、更改，还有MySQL用户/权限管理和数据库导入/导出。以下就是<strong>如何在CentOS 6或7上安装phpMyAdmin</strong>。</p>
-<p><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105616takjivihinhipzmy.jpg" alt=""></p>
-<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>在CentOS上安装phpMyAdmin，你第一步需要架设一台Web服务器(如Apache或nginx)，安装好MySQL/MariaDB数据库和PHP。根据你的偏好和需求，你可以从<a href="http://linux.cn/article-1567-1.html" target="_blank" rel="external">LAMP</a>和<a href="http://linux.cn/article-4314-1.html" target="_blank" rel="external">LEMP</a>中选择一种安装。</p>
-<p>另一个要求是允许在你的CentOS上安装EPEL库。如果你还没设置过请<a href="http://linux.cn/article-2324-1.html" target="_blank" rel="external">猛戳这里</a>。</p>
-<h3 id="在CentOS6或7上安装phpMyAdmin"><a href="#在CentOS6或7上安装phpMyAdmin" class="headerlink" title="在CentOS6或7上安装phpMyAdmin"></a>在CentOS6或7上安装phpMyAdmin</h3><p>一旦你设置了EPEL库，你就能轻松地用以下命令安装phpMyAdmin了。</p>
-<p>在CentOS 7上:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install phpmyadmin</span><br></pre></td></tr></table></figure>
-<p>在CentOS 7上:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install phpmyadmin php-mcrypt</span><br></pre></td></tr></table></figure>
-<h3 id="在CentOS-7上配置phpMyAdmin"><a href="#在CentOS-7上配置phpMyAdmin" class="headerlink" title="在CentOS 7上配置phpMyAdmin"></a>在CentOS 7上配置phpMyAdmin</h3><p>默认情况下，CentOS 7上的phpMyAdmin只允许从回环地址(127.0.0.1)访问。为了能远程连接，你需要改动它的配置。</p>
-<p>用文本编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉带有”Require ip XXXX”字样的代码行。会有四处这样的代码行，用”Require all granted”取而代之。重新改动过的配置文件如下所示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/httpd/conf.d/phpMyAdmin.conf</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. . . . .&lt;Directory /usr/share/phpMyAdmin/&gt;   AddDefaultCharset UTF-8    &lt;IfModule mod_authz_core.c&gt;     # Apache 2.4     &lt;RequireAny&gt;       #Require ip 127.0.0.1       #Require ip ::1       Require all granted     &lt;/RequireAny&gt;   &lt;/IfModule&gt;   &lt;IfModule !mod_authz_core.c&gt;     # Apache 2.2     Order Deny,Allow     Deny from All     Allow from 127.0.0.1     Allow from ::1   &lt;/IfModule&gt;&lt;/Directory&gt; &lt;Directory /usr/share/phpMyAdmin/setup/&gt;   &lt;IfModule mod_authz_core.c&gt;     # Apache 2.4     &lt;RequireAny&gt;       #Require ip 127.0.0.1       #Require ip ::1       Require all granted     &lt;/RequireAny&gt;   &lt;/IfModule&gt;   &lt;IfModule !mod_authz_core.c&gt;     # Apache 2.2     Order Deny,Allow     Deny from All     Allow from 127.0.0.1     Allow from ::1   &lt;/IfModule&gt;&lt;/Directory&gt;. . . . .</span><br></pre></td></tr></table></figure>
-<p>最后，重启httpd使改动生效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl restart httpd</span><br></pre></td></tr></table></figure>
-<h3 id="在CentOS-6上配置phpMyAdmin"><a href="#在CentOS-6上配置phpMyAdmin" class="headerlink" title="在CentOS 6上配置phpMyAdmin"></a>在CentOS 6上配置phpMyAdmin</h3><p>默认情况下，CentOS 6上的phpMyAdmin是禁止从每个IP地址访问的。为了能远程连接，你需要改动它的配置。</p>
-<p>用文本编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉”Deny from all”字样的代码行。然后把”Allow from 127.0.0.1”字样的代码行改成”Allow from 0.0.0.0”。重新改动过的配置文件如下所示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /etc/httpd/conf.d/phpmyadmin.conf</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory &quot;/usr/share/phpmyadmin&quot;&gt;  Order Deny,Allow#  Deny from all  Allow from 0.0.0.0&lt;/Directory&gt;</span><br></pre></td></tr></table></figure>
-<p>下一步是将phpMyAdmin的配置文件用blowfish加密工具加密。这一步需要加密cookie里的密码来作为基于cookie的部分认证。</p>
-<p>用文本编辑器打开如下路径所示的文件并且用blowfish设置一个随机密码，如下所示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo vi /usr/share/phpmyadmin/config.inc.php</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cfg[&apos;blowfish_secret&apos;] = &apos;kd5G&#125;d33aXDc50!&apos;; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */</span><br></pre></td></tr></table></figure>
-<p>最后，重启httpd使改动生效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service httpd restart</span><br></pre></td></tr></table></figure>
-<h3 id="测试phpMyAdmin"><a href="#测试phpMyAdmin" class="headerlink" title="测试phpMyAdmin"></a>测试phpMyAdmin</h3><p>测试phpMyAdmin是否设置成功，访问这个页面：http://<web-server-ip-addresss>/phpmyadmin</web-server-ip-addresss></p>
-<p><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105620ud2pex6zfm2mmopf.jpg" alt=""></p>
-<p>你应该能通过Web界面来记录下任何MySQL用户(比如root)和管理MySQL/MariaDB的数据库/表。</p>
-<p><img src="https://dn-linuxcn.qbox.me/data/attachment/album/201412/25/105622slmakqel8lqm0hkl.jpg" alt=""></p>
-<h3 id="疑难解答"><a href="#疑难解答" class="headerlink" title="疑难解答"></a>疑难解答</h3><p>这里有一些在CentOS上安装phpMyAdmin的过程中遇到的一些问题解决方法。</p>
-<ol>
-<li><p>当你在浏览器里尝试连接phpMyAdmin页面的时候，你看到”403 Forbidding”错误：</p>
-<p>You don’t have permission to access /phpMyAdmin on this server.</p>
-<p>发生这种错误是因为phpMyAdmin默认阻止了IP地址远程连接。要修复这种错误，你需要编辑它的配置文件来允许远程连接。具体操作见上。</p>
-</li>
-<li><p>当你连接phpMyAdmin页面时，你看见”The configuration file now needs a secret passphrase (blowfish_secret).”信息，并且你无法登录。</p>
-<p>要修复这种错误，你需要编辑 /usr/share/phpmyadmin/config.inc.php 这个文件来添加一个随机的blowfish密码，然后重启httpd，如下所示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$cfg[&apos;blowfish_secret&apos;] = &apos;kd5G&#125;d33aXDc50!&apos;; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */</span><br></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service httpd restart (CentOS 6)$ sudo systemctl restart httpd (CentOS 7)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>当你连接phpMyAdmin页面时，你看见”Cannot load mcrypt extension. Please check your PHP configuration”错误信息。</p>
-<p>要修复这种错误，要安装下面这个包：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install php-mcrypt</span><br></pre></td></tr></table></figure>
-<p>然后重启httpd：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo service httpd restart (CentOS 6)$ sudo systemctl restart httpd (CentOS 7)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-
-          
+          对于网站带宽来说，并没有一个通用固定的公式和计算的方法来计算网站所需带宽，但是并不是这样我们就没法对网站的带宽进行预算了。同样我们还有有办法对带宽和资源进行预算，这样就可以知道需要买什么样的服务器，和需要多少带宽了，不同的业务，流量差距很大的，下面我们看一下常见的网站类型和带宽资源需求。本文以我所经
+          ...
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/21/关于网站多少带宽合适/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
-    
+
     <div>
       
     </div>
@@ -547,1270 +616,6 @@
       
     </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/18/ZeroNet搭建全球网站/" itemprop="url">
-                  ZeroNet搭建全球网站
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T09:04:56+08:00" content="2016-04-18">
-              2016-04-18
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>ZeroNet是一个利用比特币加密和BT技术提供不受审查的网络与通信的BT平台，ZeroNet网络功能已经得到完整的种子的支持和加密连接，保证用户通信和文件共享的安全。使用ZeroNet，你可以匿名上网，你可以在自己电脑搭建网站，但即使你关机，你的网站依然在全球存在，别人无法关闭你的网站。</p>
-<p>　　什么是ZeroNet</p>
-<p>　　ZeroNet是一个去中心化的类似于Internet的网络，由匈牙利的开发者使用Python制作，完全开源。网站由特殊的”ZeroNet URL”可以被使用一般的浏览器通过ZeroNet程序浏览，就像访问本地主机一样。ZeroNet默认并「不」匿名，但是用户可以通过内置的Tor功能进行匿名化。ZeroNet使用Bitcoin加密算法及BitTorrent网络。</p>
-<p>　　防DMCA Take down</p>
-<p>　　由于ZeroNet去中心化的原因，国外有人制作了一个ZeroNet版本的海盗湾——Play，这个网站可让版权所有者头疼啦…一般的网站服务器都有IP地址，不抗投诉的ISP收到了向IP WHOIS滥用信箱发送的DMCA投诉信的话，你就要和你的网站说再见了..(俗称 DMCA Take down)，可用了ZeroNet后，并没有一台服务器是真实的服务器，任何访客都有可能成为服务器，还有些访客使用了Tor，更找不到真正的。</p>
-<p><strong>使用ZeroNet的特点</strong><br>    1.可以建自己的网站，你基本上不用做什么。</p>
-<p>　　2.基于p2p原理，你只要建好并有人浏览过，即使你自己关机，你的网站依然在全球存在。别人想关你站，没门。</p>
-<p>　　3.基于p2p原理，支付内网穿透，也就是说你在内网也没关系，手机也没问题。</p>
-<p>　　4.基于比特币原理，账号很安全，谁也不知道你是谁，谁也盗不去。</p>
-<p>　　5.不需要域名，任何人访问都使用<a href="http://127.0.0.1:43110/字符串" target="_blank" rel="external">http://127.0.0.1:43110/字符串</a>   来访问。</p>
-<p>　　6.不用gg fb和tt你就能浏览全世界</p>
-<p>好了，不说了，下面开始动工：</p>
-<p>项目地址：该项目的官方网址为: <a href="https://github.com/hellozeronet/zeronet" target="_blank" rel="external">https://github.com/hellozeronet/zeronet</a></p>
-<p>项目支持 windows ，linux ，MacOS，<br>下载包:<br>Microsoft Windows<br>Apple OS X<br>Linux 64bit<br>Linux 32bit<br>由于提供下载链接github一会就失效了，大家上网站上下载吧，下载地址：<br>链接: <a href="http://pan.baidu.com/s/1slOhSx3" target="_blank" rel="external">http://pan.baidu.com/s/1slOhSx3</a> 密码: 4nqa<br>下载压缩包后解压<br>windows 运行，其他平台类似 ZeroNet.cmd (win), ZeroNet(.app) (osx), ZeroNet.sh (linux)</p>
-<p>部分资源，需要的可以上聊天室里面去找：</p>
-<p>海盗湾全球种子站：<a href="http://127.0.0.1:43110/1PLAYgDQboKojowD3kwdb3CtWmWaokXvfp/" target="_blank" rel="external">http://127.0.0.1:43110/1PLAYgDQboKojowD3kwdb3CtWmWaokXvfp/</a><br>MSDN资源区：<a href="http://127.0.0.1:43110/1AJB5rtjfB9imjDGVk5vtRtZp3zgYizbpG/" target="_blank" rel="external">http://127.0.0.1:43110/1AJB5rtjfB9imjDGVk5vtRtZp3zgYizbpG/</a><br>Kindle电子书：<a href="http://127.0.0.1:43110/1KHCBG6dmbKXTZNenfwhWZ5x3oDyYyHSD4" target="_blank" rel="external">http://127.0.0.1:43110/1KHCBG6dmbKXTZNenfwhWZ5x3oDyYyHSD4</a></p>
-<p>导航：<a href="http://127.0.0.1:43110/1NzWeweqJ32aRVdM5UzFnYCszuvG5xV3vS" target="_blank" rel="external">http://127.0.0.1:43110/1NzWeweqJ32aRVdM5UzFnYCszuvG5xV3vS</a></p>
-<p>ZeroNet站点集合 &amp; 搜索引擎<br>站点集合<br><a href="http://127.0.0.1:43110/138R53t3Z" target="_blank" rel="external">http://127.0.0.1:43110/138R53t3Z</a> … ?Page:list-of-zites<br>( 中文翻译在这里 )<br><a href="http://127.0.0.1:43110/zaphods.bit/RM.html" target="_blank" rel="external">http://127.0.0.1:43110/zaphods.bit/RM.html</a><br><a href="http://127.0.0.1:43110/0list.bit/" target="_blank" rel="external">http://127.0.0.1:43110/0list.bit/</a><br><a href="http://127.0.0.1:43110/1Dt7FR5aNLkqAjmosWh8cMWzJu633GYN6u/" target="_blank" rel="external">http://127.0.0.1:43110/1Dt7FR5aNLkqAjmosWh8cMWzJu633GYN6u/</a><br>搜索引擎<br><a href="http://127.0.0.1:43110/kaffiene.bit" target="_blank" rel="external">http://127.0.0.1:43110/kaffiene.bit</a><br><a href="http://127.0.0.1:43110/zerosearch.bit/" target="_blank" rel="external">http://127.0.0.1:43110/zerosearch.bit/</a><br><a href="http://127.0.0.1:43110/zerofind.bit" target="_blank" rel="external">http://127.0.0.1:43110/zerofind.bit</a><br>公用开放ZeroNet代{过}{滤}理集合（注意，这些代{过}{滤}理不能确保你的帐号安全）<br><a href="http://127.0.0.1:43110/ZeroProxies.bit" target="_blank" rel="external">http://127.0.0.1:43110/ZeroProxies.bit</a><br>聊天室集合<br><a href="http://127.0.0.1:43110/zerochatrooms.bit" target="_blank" rel="external">http://127.0.0.1:43110/zerochatrooms.bit</a><br>博客集合<br><a href="http://127.0.0.1:43110/zeroblogs.bit" target="_blank" rel="external">http://127.0.0.1:43110/zeroblogs.bit</a><br>ZeroNet官方帮助集合<br><a href="http://127.0.0.1:43110/ZeroSupport.bit" target="_blank" rel="external">http://127.0.0.1:43110/ZeroSupport.bit</a></p>
-<p>其它的，自己撸去吧。</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/09/23/Centos 挂在数据磁盘/" itemprop="url">
-                  Centos挂载数据盘
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-09-23T00:00:00+08:00" content="2015-09-23">
-              2015-09-23
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>硬盘分区及挂载操作步骤：</p>
-<ol>
-<li>查看未挂载的硬盘（名称为/dev/xvdb）</li>
-</ol>
-<h1 id="fdisk-l"><a href="#fdisk-l" class="headerlink" title="fdisk -l"></a>fdisk -l</h1><p>Disk /dev/xvdb doesn’t contain a valid partition table</p>
-<ol>
-<li>创建分区</li>
-</ol>
-<h1 id="fdisk-dev-xvdb"><a href="#fdisk-dev-xvdb" class="headerlink" title="fdisk /dev/xvdb"></a>fdisk /dev/xvdb</h1><p>…</p>
-<p>输入n</p>
-<p>Command (m for help):n</p>
-<p>输入p</p>
-<p>Command action<br>e extended<br>p primary partition (1-4)<br>p</p>
-<p>输入1</p>
-<p>Partition number (1-4): 1</p>
-<p>回车</p>
-<p>First cylinder (1-2610, default 1):<br>Using default value 1</p>
-<p>回车</p>
-<p>Last cylinder, +cylinders or +size{K,M,G} (1-2610, default 2610):<br>Using default value 2610</p>
-<p>输入w</p>
-<p>Command (m for help): w<br>The partition table has been altered!</p>
-<ol>
-<li>格式化分区</li>
-</ol>
-<h1 id="mkfs-ext3-dev-xvdb1"><a href="#mkfs-ext3-dev-xvdb1" class="headerlink" title="mkfs.ext3 /dev/xvdb1"></a>mkfs.ext3 /dev/xvdb1</h1><ol>
-<li>建立挂载目录</li>
-</ol>
-<h1 id="mkdir-data"><a href="#mkdir-data" class="headerlink" title="mkdir /data"></a>mkdir /data</h1><ol>
-<li>挂载分区</li>
-</ol>
-<h1 id="mount-dev-xvdb1-data"><a href="#mount-dev-xvdb1-data" class="headerlink" title="mount /dev/xvdb1 /data"></a>mount /dev/xvdb1 /data</h1><ol>
-<li>设置开机自动挂载</li>
-</ol>
-<p>vi /etc/fstab</p>
-<p>在vi中输入i进入INERT模式，将光标移至文件结尾处并回车，将下面的内容复制/粘贴，然后按Esc键，输入:x保存并退出</p>
-<p>/dev/xvdb1              /data                   ext3    defaults        0 0</p>
-<ol>
-<li>确认是否挂载成功</li>
-</ol>
-<p>重启服务器</p>
-<h1 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h1><p>查看硬盘分区</p>
-<h1 id="df"><a href="#df" class="headerlink" title="df"></a>df</h1><p>/dev/xvdb1            20635700    176196  19411268   1% /data</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/08/13/关于网站大少带宽合适/" itemprop="url">
-                  关于网站大少带宽合适
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-08-13T16:53:00+08:00" content="2014-08-13">
-              2014-08-13
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>对于网站带宽来说，并没有一个通用固定的公式和计算的方法来计算网站所需带宽，但是并不是这样我们就没法对网站的带宽进行预算了。同样我们还有有办法对带宽和资源进行预算，这样就可以知道需要买什么样的服务器，和需要多少带宽了，不同的业务，流量差距很大的，下面我们看一下常见的网站类型和带宽资源需求。<br>本文以我所经历的一个项目案例来说明。</p>
-<p>网站类型：<br>文字类：导航、门户网站（大量的文字内容+少量配图）——页面大小在20K文字+100K资源<br>图片类：相册、图片分享（大量图片）——页面大小在1M图片<br>视频类：软件下载、视频播放（大文件）——文件大小在10M左右<br>电商类：导购、商城（大量文字+大量图片）——页面大小在1M图片<br>社交类：论坛、博客、群组（大量文字+部分静态资源）——页面大小在20K文字+200K资源<br>我们的服务器包括门户网站和电子商务页平均面大小1M（电子商务）+0.8M（门户网站）=1.8M<br>这个是网站页面的平均大小，即网站页面及图片视频CSS、JS大小总和/页面数，即为平均页面大小。预计我们两个网站页面平均大小为1M和0.8M。</p>
-<p>计算公式： 网站PV【注释1】 页面下载大小 8 / 30000</p>
-<p>上面的 30000 是一天的有效秒数，毕竟高峰、低峰有差别，一天中的高峰时段还是比较少。<br>上面的 8 是指一个字节是8位，而带宽都是以位做衡量单位。</p>
-<p>我们这里用10万PV作为一个量级来做一次计算<br>文字类： 100000 0.12 8 / 30000 = 3.2<br>社交类： 100000 0.22 8 / 30000 = 5.86<br>图片类： 100000 1 8 / 30000 = 26<br>电商类： 100000 1 8 / 30000 = 26<br>视频类： 100000 10 8 / 30000 = 266</p>
-<p>从上面的计算结果大概可以有一个概念了吧。<br>一个门户网站，页面内容小一点，图片少一点，需要的带宽相应也就不会太多了。10万的PV基本上可以一个3、5M的带宽就可以搞定了，不需要高太多复杂的分离【注释2】等工作。我们这里门户网站和电商分别</p>
-<p>门户网站：100000 0.8 8 / 30000 = 22M<br>电子商务：100000 1 8 / 30000=27M</p>
-<p>第一：假设峰值流量是平均流量的5倍。<br>第二：假设每次访问平均的页面大小 门户网站800K，电子商务1024K。<br>如果100万PV的访问量在一天内平均分布的话，折合到每秒大约12次访问，如果按平均每次访问页面的大小是800K（1024K）字节左右计算的话，这12次访问总计大约就是9600K（12288K）字节，字节的单位是Byte，而带宽的单位是bit，它们之间的关系是1Byte = 8bit，所以9600K Byte（12288K）大致就相当于76800K bit(98304 K bit)，也就是75Mbps (96Mbps)的样子，实际情况中，我们的网站必须能在峰值流量时保持正常访问，所以按照假设的峰值流量算，真实带宽的需求应该在75Mbps(96Mbps) 左右。<br>当然，这个结论是建立在前面提到的两点假设的基础(100万PV值、平均页面800k(1024k))上，如果你的实际情况和这两点假设有出入，那么结果也会有差别。<br>前期网站访问量比较少100万PV肯定是没有的，前期访问量预计会在，门户网站0.5万PV，电子商务1万PV，通过计算带宽为：门户网站为0.48M、电子商务为0.96M.。同时考虑系统冗余0.3。即所需带宽为（0.48+0.96）/0.7=2.05M即4M带宽（带宽为偶数和整数）</p>
-<p>即在前期4M带宽这足够，但是随着宣传和推广流量会迅速上升、短时间内会达到一个平衡。预计门户网站会达到10万PV、电子商务40万PV左右即<br>【（10/0.5）0.48+（40/1）0.96】/0.7=68.5M即70M带宽。</p>
-<p>当然这个也是在一个前提内：即1S内网站做出的反应，研究表明，用户能够忍受的最长等待时间的中位数，在6～8秒之间。这就是说，8秒是一个临界值，如果你的网站打开速度在8秒以上，那么很可能，大部分访问者最终都会离你而去。研究显示，如果等待12秒以后，网页还是没有载入，那么99%以上的用户会关闭这个网页，不再等待。相对应地，网页打开速度越慢，访问者的心理挫折感就越强，就会对网站的可信性和质量产生怀疑。在这种情况下，用户会觉得网站的后台可能出现了一些错误，因为在很长一段时间内，他没有得到任何提示。而且，缓慢的打开速度会让用户忘了下一步要干什么，不得不重新回忆，这会进一步恶化用户的使用体验。<br>人们不喜欢速度慢的软件因为人们不喜欢等待，等待意味着你要浪费时间而无所事事。但等待是你和电脑交互的过程中所必须经历的过程，软件不会马上相应你的指示，你需要等待软件载入，等待网页下载，登载……<br>因为等待并不是产品好的特征，你需要把它的影响最小化。所以要想办法缩短让用户等待的时间。如果反应时间增加同样所需带宽减少一半，对于门户网站和电子商务建议在2S内做出反应，所以所需带宽70M/2=35M（40M）足够。缩短用户等待时间还有其他很多方法，比如优化代码，还有就是现在比较流行的加入有趣的进度条的设计，一方面网站能够向用户显示反馈消息，进度条告诉用户进度目前完成了多少，还剩下多少，还可以精确地显示进行得有多快，以此来估算出剩余时间。 另一方面有趣的进度条设计可以分散用户等待的注意力，从而让用户觉得等待的时间没有那么长，程序运行的不那么慢！　</p>
-<p>除了带宽速度外，实际的业务支撑情况取决于以下几点因素：服务类型（即门户网站、电子商务）、服务器硬件性能（cpu、内存）、网站程序、数据库（Oracle、MySql、MSsql）等。</p>
-<p>服务器资源：</p>
-<p>一台服务器支撑的访问量没有一个定值，因为不同的应用占用的服务器硬件资源和服务器带宽资源是不一样的，如服务器上面的数据库结构复杂，且数据文件庞大，一个访问者进行数据查询，造成的计算量可能要消耗 1%的 CPU 资源，复用 CPU 情况下大概估算 200 个这样的用户就会消耗完服务器的 CPU 资源，即使带宽再充足，用户访问已经非常慢了，因为服务器没法计算超额的任务；</p>
-<p>在这里我们只考虑带宽的影响。网站流量是实时动态变化的，所以我们最好采用监控系统来监测网站数据流量和安全。可监测的网站内容包括：网站文字、链接、图片、源代码、网页打开速度、DNS解析等。</p>
-<p>注释：<br>1、 PV：PV（page view）即页面浏览量，通常是衡量一个网络新闻频道或网站甚至一条网络新闻的主要指标。网页浏览数是评价网站流量最常用的指标之一，简称为PV。监测网站PV的变化趋势和分析其变化原因是很多站长定期要做的工作。 Page Views中的Page一般是指普通的html网页，也包含php、jsp等动态产生的html内容。来自浏览器的一次html内容请求会被看作一个PV，逐渐累计成为PV总数。<br>2、分离: 是指由于网站访问量过大，把图片、静态页面、动态处理，分为不同的服务器来处理，从而减轻服务器压力。</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/07/31/mailgun优秀的邮件服务器/" itemprop="url">
-                  mailgun优秀的邮件服务器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-07-31T14:57:00+08:00" content="2014-07-31">
-              2014-07-31
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>昨天晚上我一个朋友问我用什么搭建邮件服务器，我本来想问使用linux还是windows，但是我还是先问了一下他需要邮件服务器干什么？当然这个很重要，因为有时你根本不需要自己搭建一个邮件服务器。比如像他这样的，他仅仅是想用一个邮件服务器做一个测试，自己搭建一个邮件服务器未免太过于浪费，而且没有必要。所以我给他推荐了mailgun邮件服务器。<br>说到mailgun我又要先百科一下，好像这已经形成了我写博客的习惯，先百科介绍一下，好吧，百度没有，google也没有介绍，就连Wikipedia上也没有介绍，好吧，没有百科，并不代表他不够优秀。不信你看利用mailgun还是有一堆，<br><img src="http://upload-images.jianshu.io/upload_images/24022-4b935b0f885aa007.png" alt="QQ截图20140731092227.png">（这个是我从DuckDuckGo上搜索截图的）<br>所以请不要怀疑，mailgun是开发人员最喜欢的邮件服务器，没有之一。</p>
-<p>既然没有百科，我就自己来介绍一下mailgun吧，Mailgun 是一个简便高效的邮件发送云服务，提供丰富的API接口<br><img src="http://upload-images.jianshu.io/upload_images/24022-1ddb263ff387295d.png" alt="QQ截图20140731092818.png"><br>这也是他们一直强调的一个东西，但是开发人员喜欢他，不仅是应为他具有丰富的API接口，还有就是他提供每个月3000封免费邮件发送服务，邮件到达率非常高。显然，对于开发者来说这就足够了，而且就算升级到付费版也比较便宜。当你开发程序时需要用到邮件发送服务，这时你就需要去搭建一个邮件服务器，显然这不是程序员擅长的，当然你可以去购买付费的邮件服务产品，但是我跟喜欢免费产品。</p>
-<p>自己搭建邮件服务器也没有什么不靠谱的，windows自带就有邮件服务功能，只需要添加即可。当然你也可以使用其他产品，例如Hmailserver（我自己建了一个Hmailserver中文论坛，<a href="http://hmailserver.7keji.cn/" target="_blank" rel="external">http://hmailserver.7keji.cn/</a> 你可以在这里寻求帮助，我们公司就是采用这个，一直在使用，很稳定，垃圾邮件过滤也很赞！），Apache james以及其他免费产品。如果你是选择linux的话，免费的邮件服务就更多了，而且大多都是开源的。当然你也可以选择一些商业版的，例如Google，SendCloud等付费产品。上面说到过，自己搭建是没有必要的，我们已经有了这么优秀的免费邮件服务器为什么还要自己花费时间去搭建呢，虽然难度不大，但是还是需要我们花费很多时间。而且如果你要把他发布在互联网测试的话，你还需要一个静态的IP地址，而且新建邮件服务器一般不被认可，大部分邮件直接当垃圾邮件处理了。这显然不是我们想要的，所以mailgun足够了。</p>
-<p>好了，说了这么多废话我就来讲一下mailgun的使用吧，虽然比较简单，但是毕竟有些人（呵呵，我就不点名了）还是有需求的。<br>1、注册<br>打开mailgun官网<a href="http://www.mailgun.com/" target="_blank" rel="external">http://www.mailgun.com/</a> （昨天他反应打开比较慢，所以你得有点耐心，或者跟换你的DNS试试）</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/24022-fa47346acc66cd8a.png" alt="QQ截图20140731095618.png"></p>
-<p>点击 “Try Mailgun Now”跟一般网站注册一样，填写注册信息</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/24022-7f622cd8bfa7c0f0.png" alt="QQ截图20140731095810.png"><br>点击注册即可。<br>2、设置<br>注册完后直接登录<br><img src="http://upload-images.jianshu.io/upload_images/24022-b9cf9ce8bca93daa.png" alt="QQ截图20140731095952.png"><br>登陆后查看有边信息，上面是如果你有自己的域名，你可以直接绑定域名，下面是给我们提供的免费域名，本次用于测试，直接选用免费域名即可。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/24022-0878c00d0232c6c8.png" alt="QQ截图20140731100231.png"><br>点击Active即跳转到设置页面。里面列出了SMTP服务器，和自动创建了一个测试用户以及密码。<br><img src="http://upload-images.jianshu.io/upload_images/24022-12d6ecc50e9621f7.png" alt="QQ截图20140731100519.png"><br>你也可以再添加用户点击账户后面的“Manage SMTP credentials”即可进入到添加用户界面，这里我们仅用于测试一个就够了，因为它可以直接向你Gmail或 QQ邮箱发送邮件了，所以你不必再去添加一个接收邮件的账户了。<br><img src="http://upload-images.jianshu.io/upload_images/24022-4bb5b7701aa5b41c.png" alt="QQ截图20140731100651.png"></p>
-<p>3、客户端设置</p>
-<p>windows的邮件客户端还是比较多的，比如Foxmail ，Outlook，Thurdbird等。linux也有不少。设置页很简单，我们用Foxmail来做测试，毕竟他是微信之父张小龙的产品。她也一直是我的偶像。<br>好了，我们利用foxmail新建一个账户，输入刚才看到的账户和密码。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/24022-60596a355c3ead80.png" alt="QQ截图20140731101217.png"><br>点击下一步</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/24022-ccf6aaa9dc59ccdb.png" alt="QQ截图20140731101449.png"><br>这里我们选择网站提供给我们的SMTP服务器地址smtp.mailgun.org，Oh,sorry! Mailgun好像没有提供邮件接收服务器，所以我们这里登录不了，只能采用其他的方式。（这里我不确定，我刚才已经发送tweet给mailgun的官方 twitter了，到时看看他们怎么回复我）</p>
-<p>好吧我们在这里写一个简单的PHP邮件发送工具<br>复制代码，另存为email.class.php<br>         &lt;?php<br>        class smtp<br>    {<br>    / Public Variables /</p>
-<pre><code>var $smtp_port;
-
-var $time_out;
-
-var $host_name;
-
-var $log_file;
-
-var $relay_host;
-
-var $debug;
-
-var $auth;
-
-var $user;
-
-var $pass;
-
-/* Private Variables */
-var $sock;
-
-/* Constractor */
-
-function smtp($relay_host = &quot;&quot;, $smtp_port = 25,$auth = false,$user,$pass)
-
-{
-
-$this-&gt;debug = FALSE;
-
-$this-&gt;smtp_port = $smtp_port;
-
-$this-&gt;relay_host = $relay_host;
-
-$this-&gt;time_out = 30; //is used in fsockopen()
-#
-
-$this-&gt;auth = $auth;//auth
-
-$this-&gt;user = $user;
-
-$this-&gt;pass = $pass;
-
-#
-
-$this-&gt;host_name = &quot;localhost&quot;; //is used in HELO command
-$this-&gt;log_file = &quot;&quot;;
-
-$this-&gt;sock = FALSE;
-
-}
-
-/* Main Function */
-
-function sendmail($to, $from, $subject = &quot;&quot;, $body = &quot;&quot;, $mailtype, $cc = &quot;&quot;, $bcc = &quot;&quot;, $additional_headers = &quot;&quot;)
-
-{
-
-$mail_from = $this-&gt;get_address($this-&gt;strip_comment($from));
-
-$body = ereg_replace(&quot;(^|(\r\n))(\.)&quot;, &quot;\1.\3&quot;, $body);
-
-$header = &quot;MIME-Version:1.0\r\n&quot;;
-
-if($mailtype==&quot;HTML&quot;){
-
-$header .= &quot;Content-Type:text/html\r\n&quot;;
-
-}
-
-$header .= &quot;To: &quot;.$to.&quot;\r\n&quot;;
-
-if ($cc != &quot;&quot;) {
-
-$header .= &quot;Cc: &quot;.$cc.&quot;\r\n&quot;;
-
-}
-
-$header .= &quot;From: $from&lt;&quot;.$from.&quot;&gt;\r\n&quot;;
-
-$header .= &quot;Subject: &quot;.$subject.&quot;\r\n&quot;;
-
-$header .= $additional_headers;
-
-$header .= &quot;Date: &quot;.date(&quot;r&quot;).&quot;\r\n&quot;;
-
-$header .= &quot;X-Mailer:By Redhat (PHP/&quot;.phpversion().&quot;)\r\n&quot;;
-
-list($msec, $sec) = explode(&quot; &quot;, microtime());
-
-$header .= &quot;Message-ID: &lt;&quot;.date(&quot;YmdHis&quot;, $sec).&quot;.&quot;.($msec*1000000).&quot;.&quot;.$mail_from.&quot;&gt;\r\n&quot;;
-
-$TO = explode(&quot;,&quot;, $this-&gt;strip_comment($to));
-
-if ($cc != &quot;&quot;) {
-
-$TO = array_merge($TO, explode(&quot;,&quot;, $this-&gt;strip_comment($cc)));
-
-}
-
-if ($bcc != &quot;&quot;) {
-
-$TO = array_merge($TO, explode(&quot;,&quot;, $this-&gt;strip_comment($bcc)));
-
-}
-
-$sent = TRUE;
-
-foreach ($TO as $rcpt_to) {
-
-$rcpt_to = $this-&gt;get_address($rcpt_to);
-
-if (!$this-&gt;smtp_sockopen($rcpt_to)) {
-
-$this-&gt;log_write(&quot;Error: Cannot send email to &quot;.$rcpt_to.&quot;\n&quot;);
-
-$sent = FALSE;
-
-continue;
-
-}
-
-if ($this-&gt;smtp_send($this-&gt;host_name, $mail_from, $rcpt_to, $header, $body)) {
-
-$this-&gt;log_write(&quot;E-mail has been sent to &lt;&quot;.$rcpt_to.&quot;&gt;\n&quot;);
-
-} else {
-
-$this-&gt;log_write(&quot;Error: Cannot send email to &lt;&quot;.$rcpt_to.&quot;&gt;\n&quot;);
-
-$sent = FALSE;
-
-}
-
-fclose($this-&gt;sock);
-
-$this-&gt;log_write(&quot;Disconnected from remote host\n&quot;);
-
-}
-
-return $sent;
-
-}
-
-/* Private Functions */
-
-function smtp_send($helo, $from, $to, $header, $body = &quot;&quot;)
-
-{
-
-if (!$this-&gt;smtp_putcmd(&quot;HELO&quot;, $helo)) {
-
-return $this-&gt;smtp_error(&quot;sending HELO command&quot;);
-
-}
-
-#auth
-
-if($this-&gt;auth){
-
-if (!$this-&gt;smtp_putcmd(&quot;AUTH LOGIN&quot;, base64_encode($this-&gt;user))) {
-
-return $this-&gt;smtp_error(&quot;sending HELO command&quot;);
-
-}
-
-if (!$this-&gt;smtp_putcmd(&quot;&quot;, base64_encode($this-&gt;pass))) {
-
-return $this-&gt;smtp_error(&quot;sending HELO command&quot;);
-
-}
-
-}
-
-#
-
-if (!$this-&gt;smtp_putcmd(&quot;MAIL&quot;, &quot;FROM:&lt;&quot;.$from.&quot;&gt;&quot;)) {
-
-return $this-&gt;smtp_error(&quot;sending MAIL FROM command&quot;);
-
-}
-
-if (!$this-&gt;smtp_putcmd(&quot;RCPT&quot;, &quot;TO:&lt;&quot;.$to.&quot;&gt;&quot;)) {
-
-return $this-&gt;smtp_error(&quot;sending RCPT TO command&quot;);
-
-}
-
-if (!$this-&gt;smtp_putcmd(&quot;DATA&quot;)) {
-
-return $this-&gt;smtp_error(&quot;sending DATA command&quot;);
-
-}
-
-if (!$this-&gt;smtp_message($header, $body)) {
-
-return $this-&gt;smtp_error(&quot;sending message&quot;);
-
-}
-
-if (!$this-&gt;smtp_eom()) {
-
-return $this-&gt;smtp_error(&quot;sending &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt; [EOM]&quot;);
-
-}
-
-if (!$this-&gt;smtp_putcmd(&quot;QUIT&quot;)) {
-
-return $this-&gt;smtp_error(&quot;sending QUIT command&quot;);
-
-}
-
-return TRUE;
-
-}
-
-function smtp_sockopen($address)
-
-{
-
-if ($this-&gt;relay_host == &quot;&quot;) {
-
-return $this-&gt;smtp_sockopen_mx($address);
-
-} else {
-
-return $this-&gt;smtp_sockopen_relay();
-
-}
-
-}
-
-function smtp_sockopen_relay()
-
-{
-
-$this-&gt;log_write(&quot;Trying to &quot;.$this-&gt;relay_host.&quot;:&quot;.$this-&gt;smtp_port.&quot;\n&quot;);
-
-$this-&gt;sock = @fsockopen($this-&gt;relay_host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);
-
-if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {
-
-$this-&gt;log_write(&quot;Error: Cannot connenct to relay host &quot;.$this-&gt;relay_host.&quot;\n&quot;);
-
-$this-&gt;log_write(&quot;Error: &quot;.$errstr.&quot; (&quot;.$errno.&quot;)\n&quot;);
-
-return FALSE;
-
-}
-
-$this-&gt;log_write(&quot;Connected to relay host &quot;.$this-&gt;relay_host.&quot;\n&quot;);
-
-return TRUE;;
-
-}
-
-function smtp_sockopen_mx($address)
-
-{
-
-$domain = ereg_replace(&quot;^.+@([^@]+)$&quot;, &quot;\1&quot;, $address);
-
-if (!@getmxrr($domain, $MXHOSTS)) {
-
-$this-&gt;log_write(&quot;Error: Cannot resolve MX \&quot;&quot;.$domain.&quot;\&quot;\n&quot;);
-
-return FALSE;
-
-}
-//专注与php学习 http://www.daixiaorui.com 欢迎您的访问
-
-foreach ($MXHOSTS as $host) {
-
-$this-&gt;log_write(&quot;Trying to &quot;.$host.&quot;:&quot;.$this-&gt;smtp_port.&quot;\n&quot;);
-
-$this-&gt;sock = @fsockopen($host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);
-
-if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {
-
-$this-&gt;log_write(&quot;Warning: Cannot connect to mx host &quot;.$host.&quot;\n&quot;);
-
-$this-&gt;log_write(&quot;Error: &quot;.$errstr.&quot; (&quot;.$errno.&quot;)\n&quot;);
-
-continue;
-
-}
-
-$this-&gt;log_write(&quot;Connected to mx host &quot;.$host.&quot;\n&quot;);
-
-return TRUE;
-
-}
-
-$this-&gt;log_write(&quot;Error: Cannot connect to any mx hosts (&quot;.implode(&quot;, &quot;, $MXHOSTS).&quot;)\n&quot;);
-
-return FALSE;
-
-}
-
-function smtp_message($header, $body)
-
-{
-
-fputs($this-&gt;sock, $header.&quot;\r\n&quot;.$body);
-
-$this-&gt;smtp_debug(&quot;&gt; &quot;.str_replace(&quot;\r\n&quot;, &quot;\n&quot;.&quot;&gt; &quot;, $header.&quot;\n&gt; &quot;.$body.&quot;\n&gt; &quot;));
-
-return TRUE;
-
-}
-
-function smtp_eom()
-
-{
-
-fputs($this-&gt;sock, &quot;\r\n.\r\n&quot;);
-
-$this-&gt;smtp_debug(&quot;. [EOM]\n&quot;);
-
-return $this-&gt;smtp_ok();
-
-}
-
-function smtp_ok()
-
-{
-
-$response = str_replace(&quot;\r\n&quot;, &quot;&quot;, fgets($this-&gt;sock, 512));
-
-$this-&gt;smtp_debug($response.&quot;\n&quot;);
-
-if (!ereg(&quot;^[23]&quot;, $response)) {
-
-fputs($this-&gt;sock, &quot;QUIT\r\n&quot;);
-
-fgets($this-&gt;sock, 512);
-
-$this-&gt;log_write(&quot;Error: Remote host returned \&quot;&quot;.$response.&quot;\&quot;\n&quot;);
-
-return FALSE;
-
-}
-
-return TRUE;
-
-}
-
-function smtp_putcmd($cmd, $arg = &quot;&quot;)
-
-{
-
-if ($arg != &quot;&quot;) {
-
-if($cmd==&quot;&quot;) $cmd = $arg;
-
-else $cmd = $cmd.&quot; &quot;.$arg;
-
-}
-
-fputs($this-&gt;sock, $cmd.&quot;\r\n&quot;);
-
-$this-&gt;smtp_debug(&quot;&gt; &quot;.$cmd.&quot;\n&quot;);
-
-return $this-&gt;smtp_ok();
-
-}
-
-function smtp_error($string)
-
-{
-
-$this-&gt;log_write(&quot;Error: Error occurred while &quot;.$string.&quot;.\n&quot;);
-
-return FALSE;
-
-}
-
-function log_write($message)
-
-{
-
-$this-&gt;smtp_debug($message);
-
-if ($this-&gt;log_file == &quot;&quot;) {
-
-return TRUE;
-
-}
-
-$message = date(&quot;M d H:i:s &quot;).get_current_user().&quot;[&quot;.getmypid().&quot;]: &quot;.$message;
-
-if (!@file_exists($this-&gt;log_file) || !($fp = @fopen($this-&gt;log_file, &quot;a&quot;))) {
-
-$this-&gt;smtp_debug(&quot;Warning: Cannot open log file \&quot;&quot;.$this-&gt;log_file.&quot;\&quot;\n&quot;);
-
-return FALSE;;
-
-}
-
-flock($fp, LOCK_EX);
-
-fputs($fp, $message);
-
-fclose($fp);
-
-
-return TRUE;
-
-}
-
-
-function strip_comment($address)
-
-{
-
-$comment = &quot;\([^()]*\)&quot;;
-
-while (ereg($comment, $address)) {
-
-$address = ereg_replace($comment, &quot;&quot;, $address);
-
-}
-
-
-return $address;
-
-}
-
-
-function get_address($address)
-
-{
-
-$address = ereg_replace(&quot;([ \t\r\n])+&quot;, &quot;&quot;, $address);
-
-$address = ereg_replace(&quot;^.*&lt;(.+)&gt;.*$&quot;, &quot;\1&quot;, $address);
-
-return $address;
-
-}
-
-function smtp_debug($message)
-
-{
-
-if ($this-&gt;debug) {
-
-echo $message;
-
-}
-
-}
-
-}
-
-?&gt;
-</code></pre><p>复制代码另存为sendmail.php</p>
-<pre><code>      &lt;?php
-   require_once &quot;email.class.php&quot;;
-   //******************** 配置信息 ********************************
-   $smtpserver = &quot;smtp.mailgun.org&quot;;//SMTP服务器
-   $smtpserverport =25;//SMTP服务器端口
-   $smtpusermail = &quot;postmaster@sandbox1444.mailgun.org&quot;;//SMTP服务器的用户邮箱
-   $smtpemailto = $_POST[&apos;toemail&apos;];//发送给谁
-   $smtpuser = &quot;postmaster&quot;;//SMTP服务器的用户帐号
-   $smtppass = &quot;qwe123456&quot;;//SMTP服务器的用户密码
-   $mailtitle = $_POST[&apos;title&apos;];//邮件主题
-   $mailcontent = &quot;&lt;h1&gt;&quot;.$_POST[&apos;content&apos;].&quot;&lt;/h1&gt;&quot;;//邮件内容
-   $mailtype = &quot;HTML&quot;;//邮件格式（HTML/TXT）,TXT为文本邮件
-   //************************ 配置信息 ****************************
-   $smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
-   $smtp-&gt;debug = false;//是否显示发送的调试信息
-   $state = $smtp-&gt;sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
-
-   echo &quot;&lt;div style=&apos;width:300px; margin:36px auto;&apos;&gt;&quot;;
-   if($state==&quot;&quot;){
-       echo &quot;对不起，邮件发送失败！请检查邮箱填写是否有误。&quot;;
-       echo &quot;&lt;a href=&apos;index.html&apos;&gt;点此返回&lt;/a&gt;&quot;;
-       exit();
-   }
-   echo &quot;恭喜！邮件发送成功！！&quot;;
-   echo &quot;&lt;a href=&apos;index.html&apos;&gt;点此返回&lt;/a&gt;&quot;;
-   echo &quot;&lt;/div&gt;&quot;;
-
-?&gt;
-</code></pre><p>好了，现在来写一个简单的也页面用来发送邮件，复制代码，另存为index.html<br>        &lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</a><br>    <html xmlns="http://www.w3.org/1999/xhtml"><br>    <head><br>    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"><br>    <title>Mailgun邮件服务器测试</title><br>    </head><br>    <body><br>    <form action="sendmail.php" method="post"><br>        <p>收件人：<input type="text" name="toemail"></p><br>        <p>标  题：<input type="text" name="title"></p><br>        <p>内  容：<textarea name="content" cols="50" rows="5"></textarea></p><br>        <p><input type="submit" value="发送"></p><br>    </form><br>    </body><br>    </html></p>
-<pre><code>好了，都做好了，界面就是这个样子，有点丑啊，毕竟我们是用来测试的。我们输入邮箱密码
-</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/24022-2fd3563fa19b1524.png" alt="QQ截图20140731144508.png"><br>点击发送，OK，发送成功！<br><img src="http://upload-images.jianshu.io/upload_images/24022-af4d78fedec51df3.png" alt="QQ截图20140731144527.png"></p>
-<p>打开Google邮箱看一下，收到一封邮件，测试完成<br><img src="http://upload-images.jianshu.io/upload_images/24022-0fa3ece6ecd8566e.png" alt="QQ截图20140731144541.png"></p>
-<p>重点在我们的发送邮件这一块的配置，这个就是我们在mailgun上得到的发送邮件服务器地址和账号。<br><img src="http://upload-images.jianshu.io/upload_images/24022-78afb5453718fa49.png" alt="QQ截图20140731144859.png"><br>由于没有接收邮件服务器，（截止我写完文章，他们twitter没有回我）估计也没有，所以不能拿Foxmail做测试了，不过没关系，这个简单的phpmail邮件服务器就搭建完成，不知道你看完教程是否已经理解了。</p>
-<p>##提示：Mailgun发送给QQ邮箱好像失败 了，我刚才测试了一下，一直没有收到邮件。</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/06/25/AppleDNS GUI – 提高 Apple 服务下载速度[OS X]/" itemprop="url">
-                  AppleDNS GUI 提高Mac 服务速度
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-06-25T00:00:00+08:00" content="2014-06-25">
-              2014-06-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Apple 的下载和云服务在国内一直是引人诟病的，不单单是速度慢，还时不时的连不上。之后苹果说在国内部署了 CDN 来加速，但不少用户都反映效果并不明显。AppleDNS 就是一个收集了苹果在国内各地 CDN 服务器并让你匹配指定的工具，但由于它是命令行操作的，对于不少朋友来说可能是一个大麻烦，于是又有网友制作了一个 GUI 的程序 AppleDNS GUI，这样就不用敲命令了。<br>运行 AppleDNS GUI 后首先在第一个下拉菜单中选择你需要的设置形式，是路由模式、Hosts 还是 Surge 模式，一般我们选 Hosts 就可以了。然后第二个下拉窗口选你的宽带运营商，最后点击最右的「Run」按钮就可以了。AppleDNS GUI 会自动帮你将对应的 IP 地址绑定到特定的域名中，让你使用 Apple 服务时能有更好的速度。<br>下载地址：<a href="https://github.com/gongjianhui/AppleDNS" target="_blank" rel="external">https://github.com/gongjianhui/AppleDNS</a></p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/06/12/如何看待不如你的人比你混的好？/" itemprop="url">
-                  如何看待不如你的人比你混的好？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-06-12T00:00:00+08:00" content="2014-06-12">
-              2014-06-12
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>昨天听一个人吐槽，大概意思就是看不太上一个人，觉得这个人年纪也大，水平也低，天天忽悠一些脑残加盟，还拿到投资什么的，觉得很愤愤不平。大概表达了两个观点，一个观点是，以他的能力，最后肯定是控制不了这个局面的，加盟的人会倒霉。一个观点是，投资什么的人是不是脑残，为什么会投给他钱。留一点反思就是问我，大熊老师，你觉得我这是嫉妒他，还是客观的思考。</p>
-<p>我大概看了一下，觉得这就是典型的觉得sb混的比自己nb,导致的不平衡，于是就探讨了一下这个问题。</p>
-<p>首先我说，你必须承认坑爹也是一种商业模式。其次，还是叶问里面那句话，功夫就是一横一竖，对的站着，错的躺下。现在人家站着，你躺着，你就不要去谈什么对方的拳法不标准，偷学的，没有后劲什么的，这没有意义。这个年代做事情有两种成功方式，第一种是做出真正的价值，套现，第二种是找出真正脑残的用户，套现。</p>
-<p>然后我们再看看一个事情到底应该是怎么驱动的，然后再看看这个人是不是真的sb。按照精英主义社会的思想，精英是一定要成功的。但实际上，成功的往往都是一些文化程度不高的。所谓秀才造反，三年不成，读书其实会给我们增加很多的设限，换句话说就是想太多了。</p>
-<p>我举了古龙七种武器里面《碧玉刀》的一个故事，主人公段玉无意中参加一个赌局，赌局的赌资都是铜板，所以段玉认为自己玩的起，而且很大方。实际上，一个铜板是一个筹码，代表一斗金子。但是段玉不知道，所以毫无心理压力，最后全赢了，然后知道真相的他眼泪流下来，万一输了他可真是输不起，回想一下都吓cry了。不过这不重要，因为他赢了。所以，这些人在做一个事情的时候，觉得一定能成功之类的，也许只是不知道危险有多大，就蒙着头过去了，结果最后发现成功了。所以，无知者无畏，未必不是一种力量。</p>
-<p>在实际生活中，这种楞人也未必就会撞死，还有很多猴精的人在后面把舵，有些事情，商业模式也好，企业也好，问题一贯很多。你害怕问题，然后不去做，总不如做大了，然后去慢慢解决问题的好。万一解决了呢?就起来了，解决不了，死了也就死了。但是你如果不做的话，是没有机会的。</p>
-<p>问问题的人，之前还是辉煌过，赶上过一股红利，是做私服，收钱收到手软，后来自己嘚瑟，钱没有存住。后来我说，我在四川也遇到过一个类似的人，不过是赶上的页游红利，现在也不台行了，也是心态平和不下来，然后就要找我开解。我都快成高僧了。我给他们的统一意见就是，不要因为外界的变化，改变自己的行为模式，人都有可能赶上一波两波红利，重要的不是赚得多不多，重要的是你活的长不长。机遇这东西很重要，但我们可以把控的只有自己，腾讯阿里百度起来有实力有机遇，我更欣赏的是史玉柱和周鸿祎，倒了还能起来。。实力大于机遇，于是人生才变的可控。如果你实在没有这个本书，就在红利的时候，控住自己的钱包，留下钱好去度过之后红利燃尽的岁月。如果敏感一点，也许能抓住下一波红利，用前一波的积蓄，往往能赚到更多。</p>
-<p>小时候，我们都学过一篇课文，小猫钓鱼，现在最难的其实也是守住自己的内心，坚信自己做的是正确的，而不是看到谁赚钱了就开始心痒难耐，开始想转型，好运往往坚持一下，就到了。至少我坚持了两年，赶上了自媒体红利。承认和别人的差距，恐怕才是你成功的开始，至于说其他的担忧就不必了，你也不是他爸爸，他做的是大是小，是死是活，和你没有半毛钱关系。大家都在路上奔跑，现在跑在前面的未必能跑到终点。你老等着他磕死，然后拿第一也不现实，也许他真会撞树上，但你也要一直跑才有可能抓住那个机会赶超。</p>
-<p>最后我们达成的一致依旧是，功夫就是一横一竖，那就是赚钱。赚钱的事情就站着，不赚钱的事情就不要过心，尤其是别人赚钱的是，和我一毛钱关系也都没有。我只能专注的做让自己赚钱的事情，说到这里，他心里敞亮了很多。<br>文章来源：宗宁的博客</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2014/06/11/Centos 安装Mysql/" itemprop="url">
-                  Centos挂载数据盘
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2014-06-11T00:00:00+08:00" content="2014-06-11">
-              2014-06-11
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Centos 6.6下安装Mysql很简单，先查看一下yum源里面的mysql以及版本<br>yum list mysql-server</p>
-<p>当只有一个时候就可以直接（如果有多个的时候，安装带上版本号）<br>yum install mysql-server<br>进行安装</p>
-<p>安装完成后，启动mysql：<br>先启动Mysql服务<br>service mysqld start</p>
-<p>设置Mysql开机启动<br>chkconfig mysqld on</p>
-<p>检查一下开启启动情况：<br>chkconfig –list</p>
-<p>MYSQL默认的数据文件存储目录为/var/lib/mysql。假如要把目录移到/home/data下需要进行下面几步：</p>
-<p>1、home目录下建立data目录</p>
-<p>cd /homemkdir data<br>2、把MySQL服务进程停掉：</p>
-<p>mysqladmin -u root -p shutdown<br>3、把/var/lib/mysql整个目录移到/home/data</p>
-<p>mv /var/lib/mysql　/home/data/<br>这样就把MySQL的数据文件移动到了/home/data/mysql下</p>
-<p>4、找到my.cnf配置文件</p>
-<p>如果/etc/目录下没有my.cnf配置文件，请到/usr/share/mysql/下找到*.cnf文件，拷贝其中一个到/etc/并改名为my.cnf)中。命令如下：</p>
-<p>[root@test1 mysql]# cp /usr/share/mysql/my-medium.cnf　/etc/my.cnf<br>5、编辑MySQL的配置文件/etc/my.cnf</p>
-<p>为保证MySQL能够正常工作，需要指明mysql.sock文件的产生位置。修改socket=/var/lib/mysql/mysql.sock一行中等号右边的值为：/home/mysql/mysql.sock 。操作如下：</p>
-<p>vi　 my.cnf　 (用vi工具编辑my.cnf文件，找到下列数据修改之)# The MySQL server[mysqld]　 port　= 3306#socket　 = /var/lib/mysql/mysql.sock（原内容，为了更稳妥用“#”注释此行）socket　 = /home/data/mysql/mysql.sock　（加上此行）<br>6、修改MySQL启动脚本/etc/init.d/mysql</p>
-<p>最后，需要修改MySQL启动脚本/etc/init.d/mysql，把其中datadir=/var/lib/mysql一行中，等号右边的路径改成你现在的实际存放路径：home/data/mysql。</p>
-<p>[root@test1 etc]# vi　/etc/init.d/mysql#datadir=/var/lib/mysql（注释此行）datadir=/home/data/mysql （加上此行）</p>
-<p>如果是CentOS还要改 /usr/bin/mysqld_safe 相关文件位置；</p>
-<p>最后 做一个mysql.sock 链接：<br>ln -s /home/data/mysql/mysql.sock /var/lib/mysql/mysql.sock</p>
-<p>7、重新启动MySQL服务<br>/etc/init.d/mysqld　start</p>
-<p>如果工作正常移动就成功了，否则对照前面的7步再检查一下。还要注意目录的属主和权限。<br>复制内容到剪贴板</p>
-<p>注意事项;<br>1.乱码问题<br>找一个配置文件，复制到/etc/目录，命名为my.cnf<br>（有时候没有my.cnf）<br>cp /usr/share/doc/mysql-server-5.1.73/my-medium.cnf /etc/my.cnf</p>
-<p>vim my.cnf<br>在[client]和[mysqld]下面都添加上<br>default-character-set=utf8<br>最后重新启动服务就可以了<br>service mysqld restart</p>
-<p>2.设置Mysql远程访问<br>grant all privileges on <em>.</em> to ‘root’@’%’ identified by ‘123456’ with grant option;</p>
-<p>3.修改mysql数据存储路径</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
 
     <footer class="post-footer">
       
@@ -1829,10 +634,6 @@ echo $message;
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1860,18 +661,18 @@ echo $message;
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/default_avatar.jpg"
+               src="/images/avatar.gif"
                alt="Fancy" />
           <p class="site-author-name" itemprop="name">Fancy</p>
-          <p class="site-description motion-element" itemprop="description">A Java Developer</p>
+          <p class="site-description motion-element" itemprop="description">Just a Blog</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1881,7 +682,7 @@ echo $message;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1893,6 +694,44 @@ echo $message;
 
         <div class="links-of-author motion-element">
           
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jwangkun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/jwangkun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jwangkun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jwangkun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
         </div>
 
         
@@ -1900,6 +739,9 @@ echo $message;
 
         
         
+
+        
+
 
       </section>
 
@@ -1917,7 +759,7 @@ echo $message;
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2013 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -1925,16 +767,18 @@ echo $message;
   <span class="author" itemprop="copyrightHolder">Fancy</span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
+
 
         
 
@@ -1968,60 +812,96 @@ echo $message;
 
 
   
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
 
   
 
 
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"dev-fany"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
 
   
   
+
+  
+
   
 
   
 
   
+
 
 </body>
 </html>
