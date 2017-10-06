@@ -1,0 +1,1241 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mailgun，邮件服务器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="昨天晚上我一个朋友问我用什么搭建邮件服务器，我本来想问使用linux还是windows，但是我还是先问了一下他需要邮件服务器干什么？当然这个很重要，因为有时你根本不需要自己搭建一个邮件服务器。比如像他这样的，他仅仅是想用一个邮件服务器做一个测试，自己搭建一个邮件服务器未免太过于浪费，而且没有必要。所以我给他推荐了mailgun邮件服务器。说到mailgun我又要先百科一下，好像这已经形成了我写博客">
+<meta name="keywords" content="mailgun，邮件服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mailgun优秀的邮件服务器">
+<meta property="og:url" content="http://yoursite.com/2014/07/31/mailgun优秀的邮件服务器/index.html">
+<meta property="og:site_name" content="Fancy">
+<meta property="og:description" content="昨天晚上我一个朋友问我用什么搭建邮件服务器，我本来想问使用linux还是windows，但是我还是先问了一下他需要邮件服务器干什么？当然这个很重要，因为有时你根本不需要自己搭建一个邮件服务器。比如像他这样的，他仅仅是想用一个邮件服务器做一个测试，自己搭建一个邮件服务器未免太过于浪费，而且没有必要。所以我给他推荐了mailgun邮件服务器。说到mailgun我又要先百科一下，好像这已经形成了我写博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-4b935b0f885aa007.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-1ddb263ff387295d.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-fa47346acc66cd8a.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-7f622cd8bfa7c0f0.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-b9cf9ce8bca93daa.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-0878c00d0232c6c8.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-12d6ecc50e9621f7.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-4bb5b7701aa5b41c.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-60596a355c3ead80.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-ccf6aaa9dc59ccdb.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-2fd3563fa19b1524.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-af4d78fedec51df3.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-0fa3ece6ecd8566e.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/24022-78afb5453718fa49.png">
+<meta property="og:updated_time" content="2017-10-06T13:46:34.596Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mailgun优秀的邮件服务器">
+<meta name="twitter:description" content="昨天晚上我一个朋友问我用什么搭建邮件服务器，我本来想问使用linux还是windows，但是我还是先问了一下他需要邮件服务器干什么？当然这个很重要，因为有时你根本不需要自己搭建一个邮件服务器。比如像他这样的，他仅仅是想用一个邮件服务器做一个测试，自己搭建一个邮件服务器未免太过于浪费，而且没有必要。所以我给他推荐了mailgun邮件服务器。说到mailgun我又要先百科一下，好像这已经形成了我写博客">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/24022-4b935b0f885aa007.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2014/07/31/mailgun优秀的邮件服务器/"/>
+
+
+
+
+
+  <title> mailgun优秀的邮件服务器 | Fancy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Fancy</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/07/31/mailgun优秀的邮件服务器/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fancy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Fancy">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Fancy" src="http://ww4.sinaimg.cn/large/8bb65895gw1fa39km2y57j20h60h6my0.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                mailgun优秀的邮件服务器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-07-31T14:57:00+00:00">
+                2014-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2014/07/31/mailgun优秀的邮件服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/07/31/mailgun优秀的邮件服务器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>昨天晚上我一个朋友问我用什么搭建邮件服务器，我本来想问使用linux还是windows，但是我还是先问了一下他需要邮件服务器干什么？当然这个很重要，因为有时你根本不需要自己搭建一个邮件服务器。比如像他这样的，他仅仅是想用一个邮件服务器做一个测试，自己搭建一个邮件服务器未免太过于浪费，而且没有必要。所以我给他推荐了mailgun邮件服务器。<br>说到mailgun我又要先百科一下，好像这已经形成了我写博客的习惯，先百科介绍一下，好吧，百度没有，google也没有介绍，就连Wikipedia上也没有介绍，好吧，没有百科，并不代表他不够优秀。不信你看利用mailgun还是有一堆，<br><img src="http://upload-images.jianshu.io/upload_images/24022-4b935b0f885aa007.png" alt="QQ截图20140731092227.png">（这个是我从DuckDuckGo上搜索截图的）<br>所以请不要怀疑，mailgun是开发人员最喜欢的邮件服务器，没有之一。</p>
+<p>既然没有百科，我就自己来介绍一下mailgun吧，Mailgun 是一个简便高效的邮件发送云服务，提供丰富的API接口<br><img src="http://upload-images.jianshu.io/upload_images/24022-1ddb263ff387295d.png" alt="QQ截图20140731092818.png"><br>这也是他们一直强调的一个东西，但是开发人员喜欢他，不仅是应为他具有丰富的API接口，还有就是他提供每个月3000封免费邮件发送服务，邮件到达率非常高。显然，对于开发者来说这就足够了，而且就算升级到付费版也比较便宜。当你开发程序时需要用到邮件发送服务，这时你就需要去搭建一个邮件服务器，显然这不是程序员擅长的，当然你可以去购买付费的邮件服务产品，但是我跟喜欢免费产品。</p>
+<p>自己搭建邮件服务器也没有什么不靠谱的，windows自带就有邮件服务功能，只需要添加即可。当然你也可以使用其他产品，例如Hmailserver（我自己建了一个Hmailserver中文论坛，<a href="http://hmailserver.7keji.cn/" target="_blank" rel="external">http://hmailserver.7keji.cn/</a> 你可以在这里寻求帮助，我们公司就是采用这个，一直在使用，很稳定，垃圾邮件过滤也很赞！），Apache james以及其他免费产品。如果你是选择linux的话，免费的邮件服务就更多了，而且大多都是开源的。当然你也可以选择一些商业版的，例如Google，SendCloud等付费产品。上面说到过，自己搭建是没有必要的，我们已经有了这么优秀的免费邮件服务器为什么还要自己花费时间去搭建呢，虽然难度不大，但是还是需要我们花费很多时间。而且如果你要把他发布在互联网测试的话，你还需要一个静态的IP地址，而且新建邮件服务器一般不被认可，大部分邮件直接当垃圾邮件处理了。这显然不是我们想要的，所以mailgun足够了。</p>
+<p>好了，说了这么多废话我就来讲一下mailgun的使用吧，虽然比较简单，但是毕竟有些人（呵呵，我就不点名了）还是有需求的。<br>1、注册<br>打开mailgun官网<a href="http://www.mailgun.com/" target="_blank" rel="external">http://www.mailgun.com/</a> （昨天他反应打开比较慢，所以你得有点耐心，或者跟换你的DNS试试）</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/24022-fa47346acc66cd8a.png" alt="QQ截图20140731095618.png"></p>
+<p>点击 “Try Mailgun Now”跟一般网站注册一样，填写注册信息</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/24022-7f622cd8bfa7c0f0.png" alt="QQ截图20140731095810.png"><br>点击注册即可。<br>2、设置<br>注册完后直接登录<br><img src="http://upload-images.jianshu.io/upload_images/24022-b9cf9ce8bca93daa.png" alt="QQ截图20140731095952.png"><br>登陆后查看有边信息，上面是如果你有自己的域名，你可以直接绑定域名，下面是给我们提供的免费域名，本次用于测试，直接选用免费域名即可。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/24022-0878c00d0232c6c8.png" alt="QQ截图20140731100231.png"><br>点击Active即跳转到设置页面。里面列出了SMTP服务器，和自动创建了一个测试用户以及密码。<br><img src="http://upload-images.jianshu.io/upload_images/24022-12d6ecc50e9621f7.png" alt="QQ截图20140731100519.png"><br>你也可以再添加用户点击账户后面的“Manage SMTP credentials”即可进入到添加用户界面，这里我们仅用于测试一个就够了，因为它可以直接向你Gmail或 QQ邮箱发送邮件了，所以你不必再去添加一个接收邮件的账户了。<br><img src="http://upload-images.jianshu.io/upload_images/24022-4bb5b7701aa5b41c.png" alt="QQ截图20140731100651.png"></p>
+<p>3、客户端设置</p>
+<p>windows的邮件客户端还是比较多的，比如Foxmail ，Outlook，Thurdbird等。linux也有不少。设置页很简单，我们用Foxmail来做测试，毕竟他是微信之父张小龙的产品。她也一直是我的偶像。<br>好了，我们利用foxmail新建一个账户，输入刚才看到的账户和密码。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/24022-60596a355c3ead80.png" alt="QQ截图20140731101217.png"><br>点击下一步</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/24022-ccf6aaa9dc59ccdb.png" alt="QQ截图20140731101449.png"><br>这里我们选择网站提供给我们的SMTP服务器地址smtp.mailgun.org，Oh,sorry! Mailgun好像没有提供邮件接收服务器，所以我们这里登录不了，只能采用其他的方式。（这里我不确定，我刚才已经发送tweet给mailgun的官方 twitter了，到时看看他们怎么回复我）</p>
+<p>好吧我们在这里写一个简单的PHP邮件发送工具<br>复制代码，另存为email.class.php<br>         &lt;?php<br>        class smtp<br>    {<br>    / Public Variables /</p>
+<pre><code>var $smtp_port;
+
+var $time_out;
+
+var $host_name;
+
+var $log_file;
+
+var $relay_host;
+
+var $debug;
+
+var $auth;
+
+var $user;
+
+var $pass;
+
+/* Private Variables */
+var $sock;
+
+/* Constractor */
+
+function smtp($relay_host = &quot;&quot;, $smtp_port = 25,$auth = false,$user,$pass)
+
+{
+
+$this-&gt;debug = FALSE;
+
+$this-&gt;smtp_port = $smtp_port;
+
+$this-&gt;relay_host = $relay_host;
+
+$this-&gt;time_out = 30; //is used in fsockopen()
+#
+
+$this-&gt;auth = $auth;//auth
+
+$this-&gt;user = $user;
+
+$this-&gt;pass = $pass;
+
+#
+
+$this-&gt;host_name = &quot;localhost&quot;; //is used in HELO command
+$this-&gt;log_file = &quot;&quot;;
+
+$this-&gt;sock = FALSE;
+
+}
+
+/* Main Function */
+
+function sendmail($to, $from, $subject = &quot;&quot;, $body = &quot;&quot;, $mailtype, $cc = &quot;&quot;, $bcc = &quot;&quot;, $additional_headers = &quot;&quot;)
+
+{
+
+$mail_from = $this-&gt;get_address($this-&gt;strip_comment($from));
+
+$body = ereg_replace(&quot;(^|(\r\n))(\.)&quot;, &quot;\1.\3&quot;, $body);
+
+$header = &quot;MIME-Version:1.0\r\n&quot;;
+
+if($mailtype==&quot;HTML&quot;){
+
+$header .= &quot;Content-Type:text/html\r\n&quot;;
+
+}
+
+$header .= &quot;To: &quot;.$to.&quot;\r\n&quot;;
+
+if ($cc != &quot;&quot;) {
+
+$header .= &quot;Cc: &quot;.$cc.&quot;\r\n&quot;;
+
+}
+
+$header .= &quot;From: $from&lt;&quot;.$from.&quot;&gt;\r\n&quot;;
+
+$header .= &quot;Subject: &quot;.$subject.&quot;\r\n&quot;;
+
+$header .= $additional_headers;
+
+$header .= &quot;Date: &quot;.date(&quot;r&quot;).&quot;\r\n&quot;;
+
+$header .= &quot;X-Mailer:By Redhat (PHP/&quot;.phpversion().&quot;)\r\n&quot;;
+
+list($msec, $sec) = explode(&quot; &quot;, microtime());
+
+$header .= &quot;Message-ID: &lt;&quot;.date(&quot;YmdHis&quot;, $sec).&quot;.&quot;.($msec*1000000).&quot;.&quot;.$mail_from.&quot;&gt;\r\n&quot;;
+
+$TO = explode(&quot;,&quot;, $this-&gt;strip_comment($to));
+
+if ($cc != &quot;&quot;) {
+
+$TO = array_merge($TO, explode(&quot;,&quot;, $this-&gt;strip_comment($cc)));
+
+}
+
+if ($bcc != &quot;&quot;) {
+
+$TO = array_merge($TO, explode(&quot;,&quot;, $this-&gt;strip_comment($bcc)));
+
+}
+
+$sent = TRUE;
+
+foreach ($TO as $rcpt_to) {
+
+$rcpt_to = $this-&gt;get_address($rcpt_to);
+
+if (!$this-&gt;smtp_sockopen($rcpt_to)) {
+
+$this-&gt;log_write(&quot;Error: Cannot send email to &quot;.$rcpt_to.&quot;\n&quot;);
+
+$sent = FALSE;
+
+continue;
+
+}
+
+if ($this-&gt;smtp_send($this-&gt;host_name, $mail_from, $rcpt_to, $header, $body)) {
+
+$this-&gt;log_write(&quot;E-mail has been sent to &lt;&quot;.$rcpt_to.&quot;&gt;\n&quot;);
+
+} else {
+
+$this-&gt;log_write(&quot;Error: Cannot send email to &lt;&quot;.$rcpt_to.&quot;&gt;\n&quot;);
+
+$sent = FALSE;
+
+}
+
+fclose($this-&gt;sock);
+
+$this-&gt;log_write(&quot;Disconnected from remote host\n&quot;);
+
+}
+
+return $sent;
+
+}
+
+/* Private Functions */
+
+function smtp_send($helo, $from, $to, $header, $body = &quot;&quot;)
+
+{
+
+if (!$this-&gt;smtp_putcmd(&quot;HELO&quot;, $helo)) {
+
+return $this-&gt;smtp_error(&quot;sending HELO command&quot;);
+
+}
+
+#auth
+
+if($this-&gt;auth){
+
+if (!$this-&gt;smtp_putcmd(&quot;AUTH LOGIN&quot;, base64_encode($this-&gt;user))) {
+
+return $this-&gt;smtp_error(&quot;sending HELO command&quot;);
+
+}
+
+if (!$this-&gt;smtp_putcmd(&quot;&quot;, base64_encode($this-&gt;pass))) {
+
+return $this-&gt;smtp_error(&quot;sending HELO command&quot;);
+
+}
+
+}
+
+#
+
+if (!$this-&gt;smtp_putcmd(&quot;MAIL&quot;, &quot;FROM:&lt;&quot;.$from.&quot;&gt;&quot;)) {
+
+return $this-&gt;smtp_error(&quot;sending MAIL FROM command&quot;);
+
+}
+
+if (!$this-&gt;smtp_putcmd(&quot;RCPT&quot;, &quot;TO:&lt;&quot;.$to.&quot;&gt;&quot;)) {
+
+return $this-&gt;smtp_error(&quot;sending RCPT TO command&quot;);
+
+}
+
+if (!$this-&gt;smtp_putcmd(&quot;DATA&quot;)) {
+
+return $this-&gt;smtp_error(&quot;sending DATA command&quot;);
+
+}
+
+if (!$this-&gt;smtp_message($header, $body)) {
+
+return $this-&gt;smtp_error(&quot;sending message&quot;);
+
+}
+
+if (!$this-&gt;smtp_eom()) {
+
+return $this-&gt;smtp_error(&quot;sending &lt;CR&gt;&lt;LF&gt;.&lt;CR&gt;&lt;LF&gt; [EOM]&quot;);
+
+}
+
+if (!$this-&gt;smtp_putcmd(&quot;QUIT&quot;)) {
+
+return $this-&gt;smtp_error(&quot;sending QUIT command&quot;);
+
+}
+
+return TRUE;
+
+}
+
+function smtp_sockopen($address)
+
+{
+
+if ($this-&gt;relay_host == &quot;&quot;) {
+
+return $this-&gt;smtp_sockopen_mx($address);
+
+} else {
+
+return $this-&gt;smtp_sockopen_relay();
+
+}
+
+}
+
+function smtp_sockopen_relay()
+
+{
+
+$this-&gt;log_write(&quot;Trying to &quot;.$this-&gt;relay_host.&quot;:&quot;.$this-&gt;smtp_port.&quot;\n&quot;);
+
+$this-&gt;sock = @fsockopen($this-&gt;relay_host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);
+
+if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {
+
+$this-&gt;log_write(&quot;Error: Cannot connenct to relay host &quot;.$this-&gt;relay_host.&quot;\n&quot;);
+
+$this-&gt;log_write(&quot;Error: &quot;.$errstr.&quot; (&quot;.$errno.&quot;)\n&quot;);
+
+return FALSE;
+
+}
+
+$this-&gt;log_write(&quot;Connected to relay host &quot;.$this-&gt;relay_host.&quot;\n&quot;);
+
+return TRUE;;
+
+}
+
+function smtp_sockopen_mx($address)
+
+{
+
+$domain = ereg_replace(&quot;^.+@([^@]+)$&quot;, &quot;\1&quot;, $address);
+
+if (!@getmxrr($domain, $MXHOSTS)) {
+
+$this-&gt;log_write(&quot;Error: Cannot resolve MX \&quot;&quot;.$domain.&quot;\&quot;\n&quot;);
+
+return FALSE;
+
+}
+//专注与php学习 http://www.daixiaorui.com 欢迎您的访问
+
+foreach ($MXHOSTS as $host) {
+
+$this-&gt;log_write(&quot;Trying to &quot;.$host.&quot;:&quot;.$this-&gt;smtp_port.&quot;\n&quot;);
+
+$this-&gt;sock = @fsockopen($host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);
+
+if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {
+
+$this-&gt;log_write(&quot;Warning: Cannot connect to mx host &quot;.$host.&quot;\n&quot;);
+
+$this-&gt;log_write(&quot;Error: &quot;.$errstr.&quot; (&quot;.$errno.&quot;)\n&quot;);
+
+continue;
+
+}
+
+$this-&gt;log_write(&quot;Connected to mx host &quot;.$host.&quot;\n&quot;);
+
+return TRUE;
+
+}
+
+$this-&gt;log_write(&quot;Error: Cannot connect to any mx hosts (&quot;.implode(&quot;, &quot;, $MXHOSTS).&quot;)\n&quot;);
+
+return FALSE;
+
+}
+
+function smtp_message($header, $body)
+
+{
+
+fputs($this-&gt;sock, $header.&quot;\r\n&quot;.$body);
+
+$this-&gt;smtp_debug(&quot;&gt; &quot;.str_replace(&quot;\r\n&quot;, &quot;\n&quot;.&quot;&gt; &quot;, $header.&quot;\n&gt; &quot;.$body.&quot;\n&gt; &quot;));
+
+return TRUE;
+
+}
+
+function smtp_eom()
+
+{
+
+fputs($this-&gt;sock, &quot;\r\n.\r\n&quot;);
+
+$this-&gt;smtp_debug(&quot;. [EOM]\n&quot;);
+
+return $this-&gt;smtp_ok();
+
+}
+
+function smtp_ok()
+
+{
+
+$response = str_replace(&quot;\r\n&quot;, &quot;&quot;, fgets($this-&gt;sock, 512));
+
+$this-&gt;smtp_debug($response.&quot;\n&quot;);
+
+if (!ereg(&quot;^[23]&quot;, $response)) {
+
+fputs($this-&gt;sock, &quot;QUIT\r\n&quot;);
+
+fgets($this-&gt;sock, 512);
+
+$this-&gt;log_write(&quot;Error: Remote host returned \&quot;&quot;.$response.&quot;\&quot;\n&quot;);
+
+return FALSE;
+
+}
+
+return TRUE;
+
+}
+
+function smtp_putcmd($cmd, $arg = &quot;&quot;)
+
+{
+
+if ($arg != &quot;&quot;) {
+
+if($cmd==&quot;&quot;) $cmd = $arg;
+
+else $cmd = $cmd.&quot; &quot;.$arg;
+
+}
+
+fputs($this-&gt;sock, $cmd.&quot;\r\n&quot;);
+
+$this-&gt;smtp_debug(&quot;&gt; &quot;.$cmd.&quot;\n&quot;);
+
+return $this-&gt;smtp_ok();
+
+}
+
+function smtp_error($string)
+
+{
+
+$this-&gt;log_write(&quot;Error: Error occurred while &quot;.$string.&quot;.\n&quot;);
+
+return FALSE;
+
+}
+
+function log_write($message)
+
+{
+
+$this-&gt;smtp_debug($message);
+
+if ($this-&gt;log_file == &quot;&quot;) {
+
+return TRUE;
+
+}
+
+$message = date(&quot;M d H:i:s &quot;).get_current_user().&quot;[&quot;.getmypid().&quot;]: &quot;.$message;
+
+if (!@file_exists($this-&gt;log_file) || !($fp = @fopen($this-&gt;log_file, &quot;a&quot;))) {
+
+$this-&gt;smtp_debug(&quot;Warning: Cannot open log file \&quot;&quot;.$this-&gt;log_file.&quot;\&quot;\n&quot;);
+
+return FALSE;;
+
+}
+
+flock($fp, LOCK_EX);
+
+fputs($fp, $message);
+
+fclose($fp);
+
+
+return TRUE;
+
+}
+
+
+function strip_comment($address)
+
+{
+
+$comment = &quot;\([^()]*\)&quot;;
+
+while (ereg($comment, $address)) {
+
+$address = ereg_replace($comment, &quot;&quot;, $address);
+
+}
+
+
+return $address;
+
+}
+
+
+function get_address($address)
+
+{
+
+$address = ereg_replace(&quot;([ \t\r\n])+&quot;, &quot;&quot;, $address);
+
+$address = ereg_replace(&quot;^.*&lt;(.+)&gt;.*$&quot;, &quot;\1&quot;, $address);
+
+return $address;
+
+}
+
+function smtp_debug($message)
+
+{
+
+if ($this-&gt;debug) {
+
+echo $message;
+
+}
+
+}
+
+}
+
+?&gt;
+</code></pre><p>复制代码另存为sendmail.php</p>
+<pre><code>      &lt;?php
+   require_once &quot;email.class.php&quot;;
+   //******************** 配置信息 ********************************
+   $smtpserver = &quot;smtp.mailgun.org&quot;;//SMTP服务器
+   $smtpserverport =25;//SMTP服务器端口
+   $smtpusermail = &quot;postmaster@sandbox1444.mailgun.org&quot;;//SMTP服务器的用户邮箱
+   $smtpemailto = $_POST[&apos;toemail&apos;];//发送给谁
+   $smtpuser = &quot;postmaster&quot;;//SMTP服务器的用户帐号
+   $smtppass = &quot;qwe123456&quot;;//SMTP服务器的用户密码
+   $mailtitle = $_POST[&apos;title&apos;];//邮件主题
+   $mailcontent = &quot;&lt;h1&gt;&quot;.$_POST[&apos;content&apos;].&quot;&lt;/h1&gt;&quot;;//邮件内容
+   $mailtype = &quot;HTML&quot;;//邮件格式（HTML/TXT）,TXT为文本邮件
+   //************************ 配置信息 ****************************
+   $smtp = new smtp($smtpserver,$smtpserverport,true,$smtpuser,$smtppass);//这里面的一个true是表示使用身份验证,否则不使用身份验证.
+   $smtp-&gt;debug = false;//是否显示发送的调试信息
+   $state = $smtp-&gt;sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
+
+   echo &quot;&lt;div style=&apos;width:300px; margin:36px auto;&apos;&gt;&quot;;
+   if($state==&quot;&quot;){
+       echo &quot;对不起，邮件发送失败！请检查邮箱填写是否有误。&quot;;
+       echo &quot;&lt;a href=&apos;index.html&apos;&gt;点此返回&lt;/a&gt;&quot;;
+       exit();
+   }
+   echo &quot;恭喜！邮件发送成功！！&quot;;
+   echo &quot;&lt;a href=&apos;index.html&apos;&gt;点此返回&lt;/a&gt;&quot;;
+   echo &quot;&lt;/div&gt;&quot;;
+
+?&gt;
+</code></pre><p>好了，现在来写一个简单的也页面用来发送邮件，复制代码，另存为index.html<br>        &lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</a><br>    <html xmlns="http://www.w3.org/1999/xhtml"><br>    <head><br>    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"><br>    <title>Mailgun邮件服务器测试</title><br>    </head><br>    <body><br>    <form action="sendmail.php" method="post"><br>        <p>收件人：<input type="text" name="toemail"></p><br>        <p>标  题：<input type="text" name="title"></p><br>        <p>内  容：<textarea name="content" cols="50" rows="5"></textarea></p><br>        <p><input type="submit" value="发送"></p><br>    </form><br>    </body><br>    </html></p>
+<pre><code>好了，都做好了，界面就是这个样子，有点丑啊，毕竟我们是用来测试的。我们输入邮箱密码
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/24022-2fd3563fa19b1524.png" alt="QQ截图20140731144508.png"><br>点击发送，OK，发送成功！<br><img src="http://upload-images.jianshu.io/upload_images/24022-af4d78fedec51df3.png" alt="QQ截图20140731144527.png"></p>
+<p>打开Google邮箱看一下，收到一封邮件，测试完成<br><img src="http://upload-images.jianshu.io/upload_images/24022-0fa3ece6ecd8566e.png" alt="QQ截图20140731144541.png"></p>
+<p>重点在我们的发送邮件这一块的配置，这个就是我们在mailgun上得到的发送邮件服务器地址和账号。<br><img src="http://upload-images.jianshu.io/upload_images/24022-78afb5453718fa49.png" alt="QQ截图20140731144859.png"><br>由于没有接收邮件服务器，（截止我写完文章，他们twitter没有回我）估计也没有，所以不能拿Foxmail做测试了，不过没关系，这个简单的phpmail邮件服务器就搭建完成，不知道你看完教程是否已经理解了。</p>
+<p>##提示：Mailgun发送给QQ邮箱好像失败 了，我刚才测试了一下，一直没有收到邮件。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Fancy WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Fancy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mailgun，邮件服务器/" rel="tag"># mailgun，邮件服务器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/06/25/AppleDNS GUI – 提高 Apple 服务下载速度[OS X]/" rel="next" title="AppleDNS GUI 提高Mac 服务速度">
+                <i class="fa fa-chevron-left"></i> AppleDNS GUI 提高Mac 服务速度
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/08/13/关于网站大少带宽合适/" rel="prev" title="关于网站大少带宽合适">
+                关于网站大少带宽合适 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/07/31/mailgun优秀的邮件服务器/"
+           data-title="mailgun优秀的邮件服务器" data-url="http://yoursite.com/2014/07/31/mailgun优秀的邮件服务器/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Fancy" />
+          <p class="site-author-name" itemprop="name">Fancy</p>
+          <p class="site-description motion-element" itemprop="description">Just a Blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jwangkun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/jwangkun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jwangkun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jwangkun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fancy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"dev-fany"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

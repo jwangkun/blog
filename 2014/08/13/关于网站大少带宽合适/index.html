@@ -1,0 +1,738 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网站带宽," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="对于网站带宽来说，并没有一个通用固定的公式和计算的方法来计算网站所需带宽，但是并不是这样我们就没法对网站的带宽进行预算了。同样我们还有有办法对带宽和资源进行预算，这样就可以知道需要买什么样的服务器，和需要多少带宽了，不同的业务，流量差距很大的，下面我们看一下常见的网站类型和带宽资源需求。本文以我所经历的一个项目案例来说明。 网站类型：文字类：导航、门户网站（大量的文字内容+少量配图）——页面大小在">
+<meta name="keywords" content="网站带宽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于网站大少带宽合适">
+<meta property="og:url" content="http://yoursite.com/2014/08/13/关于网站大少带宽合适/index.html">
+<meta property="og:site_name" content="Fancy">
+<meta property="og:description" content="对于网站带宽来说，并没有一个通用固定的公式和计算的方法来计算网站所需带宽，但是并不是这样我们就没法对网站的带宽进行预算了。同样我们还有有办法对带宽和资源进行预算，这样就可以知道需要买什么样的服务器，和需要多少带宽了，不同的业务，流量差距很大的，下面我们看一下常见的网站类型和带宽资源需求。本文以我所经历的一个项目案例来说明。 网站类型：文字类：导航、门户网站（大量的文字内容+少量配图）——页面大小在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-04-16T14:04:34.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于网站大少带宽合适">
+<meta name="twitter:description" content="对于网站带宽来说，并没有一个通用固定的公式和计算的方法来计算网站所需带宽，但是并不是这样我们就没法对网站的带宽进行预算了。同样我们还有有办法对带宽和资源进行预算，这样就可以知道需要买什么样的服务器，和需要多少带宽了，不同的业务，流量差距很大的，下面我们看一下常见的网站类型和带宽资源需求。本文以我所经历的一个项目案例来说明。 网站类型：文字类：导航、门户网站（大量的文字内容+少量配图）——页面大小在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2014/08/13/关于网站大少带宽合适/"/>
+
+
+
+
+
+  <title> 关于网站大少带宽合适 | Fancy </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Fancy</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/08/13/关于网站大少带宽合适/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Fancy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Fancy">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Fancy" src="http://ww4.sinaimg.cn/large/8bb65895gw1fa39km2y57j20h60h6my0.jpg">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于网站大少带宽合适
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-08-13T08:53:00+00:00">
+                2014-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2014/08/13/关于网站大少带宽合适/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/08/13/关于网站大少带宽合适/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>对于网站带宽来说，并没有一个通用固定的公式和计算的方法来计算网站所需带宽，但是并不是这样我们就没法对网站的带宽进行预算了。同样我们还有有办法对带宽和资源进行预算，这样就可以知道需要买什么样的服务器，和需要多少带宽了，不同的业务，流量差距很大的，下面我们看一下常见的网站类型和带宽资源需求。<br>本文以我所经历的一个项目案例来说明。</p>
+<p>网站类型：<br>文字类：导航、门户网站（大量的文字内容+少量配图）——页面大小在20K文字+100K资源<br>图片类：相册、图片分享（大量图片）——页面大小在1M图片<br>视频类：软件下载、视频播放（大文件）——文件大小在10M左右<br>电商类：导购、商城（大量文字+大量图片）——页面大小在1M图片<br>社交类：论坛、博客、群组（大量文字+部分静态资源）——页面大小在20K文字+200K资源<br>我们的服务器包括门户网站和电子商务页平均面大小1M（电子商务）+0.8M（门户网站）=1.8M<br>这个是网站页面的平均大小，即网站页面及图片视频CSS、JS大小总和/页面数，即为平均页面大小。预计我们两个网站页面平均大小为1M和0.8M。</p>
+<p>计算公式： 网站PV【注释1】 页面下载大小 8 / 30000</p>
+<p>上面的 30000 是一天的有效秒数，毕竟高峰、低峰有差别，一天中的高峰时段还是比较少。<br>上面的 8 是指一个字节是8位，而带宽都是以位做衡量单位。</p>
+<p>我们这里用10万PV作为一个量级来做一次计算<br>文字类： 100000 0.12 8 / 30000 = 3.2<br>社交类： 100000 0.22 8 / 30000 = 5.86<br>图片类： 100000 1 8 / 30000 = 26<br>电商类： 100000 1 8 / 30000 = 26<br>视频类： 100000 10 8 / 30000 = 266</p>
+<p>从上面的计算结果大概可以有一个概念了吧。<br>一个门户网站，页面内容小一点，图片少一点，需要的带宽相应也就不会太多了。10万的PV基本上可以一个3、5M的带宽就可以搞定了，不需要高太多复杂的分离【注释2】等工作。我们这里门户网站和电商分别</p>
+<p>门户网站：100000 0.8 8 / 30000 = 22M<br>电子商务：100000 1 8 / 30000=27M</p>
+<p>第一：假设峰值流量是平均流量的5倍。<br>第二：假设每次访问平均的页面大小 门户网站800K，电子商务1024K。<br>如果100万PV的访问量在一天内平均分布的话，折合到每秒大约12次访问，如果按平均每次访问页面的大小是800K（1024K）字节左右计算的话，这12次访问总计大约就是9600K（12288K）字节，字节的单位是Byte，而带宽的单位是bit，它们之间的关系是1Byte = 8bit，所以9600K Byte（12288K）大致就相当于76800K bit(98304 K bit)，也就是75Mbps (96Mbps)的样子，实际情况中，我们的网站必须能在峰值流量时保持正常访问，所以按照假设的峰值流量算，真实带宽的需求应该在75Mbps(96Mbps) 左右。<br>当然，这个结论是建立在前面提到的两点假设的基础(100万PV值、平均页面800k(1024k))上，如果你的实际情况和这两点假设有出入，那么结果也会有差别。<br>前期网站访问量比较少100万PV肯定是没有的，前期访问量预计会在，门户网站0.5万PV，电子商务1万PV，通过计算带宽为：门户网站为0.48M、电子商务为0.96M.。同时考虑系统冗余0.3。即所需带宽为（0.48+0.96）/0.7=2.05M即4M带宽（带宽为偶数和整数）</p>
+<p>即在前期4M带宽这足够，但是随着宣传和推广流量会迅速上升、短时间内会达到一个平衡。预计门户网站会达到10万PV、电子商务40万PV左右即<br>【（10/0.5）0.48+（40/1）0.96】/0.7=68.5M即70M带宽。</p>
+<p>当然这个也是在一个前提内：即1S内网站做出的反应，研究表明，用户能够忍受的最长等待时间的中位数，在6～8秒之间。这就是说，8秒是一个临界值，如果你的网站打开速度在8秒以上，那么很可能，大部分访问者最终都会离你而去。研究显示，如果等待12秒以后，网页还是没有载入，那么99%以上的用户会关闭这个网页，不再等待。相对应地，网页打开速度越慢，访问者的心理挫折感就越强，就会对网站的可信性和质量产生怀疑。在这种情况下，用户会觉得网站的后台可能出现了一些错误，因为在很长一段时间内，他没有得到任何提示。而且，缓慢的打开速度会让用户忘了下一步要干什么，不得不重新回忆，这会进一步恶化用户的使用体验。<br>人们不喜欢速度慢的软件因为人们不喜欢等待，等待意味着你要浪费时间而无所事事。但等待是你和电脑交互的过程中所必须经历的过程，软件不会马上相应你的指示，你需要等待软件载入，等待网页下载，登载……<br>因为等待并不是产品好的特征，你需要把它的影响最小化。所以要想办法缩短让用户等待的时间。如果反应时间增加同样所需带宽减少一半，对于门户网站和电子商务建议在2S内做出反应，所以所需带宽70M/2=35M（40M）足够。缩短用户等待时间还有其他很多方法，比如优化代码，还有就是现在比较流行的加入有趣的进度条的设计，一方面网站能够向用户显示反馈消息，进度条告诉用户进度目前完成了多少，还剩下多少，还可以精确地显示进行得有多快，以此来估算出剩余时间。 另一方面有趣的进度条设计可以分散用户等待的注意力，从而让用户觉得等待的时间没有那么长，程序运行的不那么慢！　</p>
+<p>除了带宽速度外，实际的业务支撑情况取决于以下几点因素：服务类型（即门户网站、电子商务）、服务器硬件性能（cpu、内存）、网站程序、数据库（Oracle、MySql、MSsql）等。</p>
+<p>服务器资源：</p>
+<p>一台服务器支撑的访问量没有一个定值，因为不同的应用占用的服务器硬件资源和服务器带宽资源是不一样的，如服务器上面的数据库结构复杂，且数据文件庞大，一个访问者进行数据查询，造成的计算量可能要消耗 1%的 CPU 资源，复用 CPU 情况下大概估算 200 个这样的用户就会消耗完服务器的 CPU 资源，即使带宽再充足，用户访问已经非常慢了，因为服务器没法计算超额的任务；</p>
+<p>在这里我们只考虑带宽的影响。网站流量是实时动态变化的，所以我们最好采用监控系统来监测网站数据流量和安全。可监测的网站内容包括：网站文字、链接、图片、源代码、网页打开速度、DNS解析等。</p>
+<p>注释：<br>1、 PV：PV（page view）即页面浏览量，通常是衡量一个网络新闻频道或网站甚至一条网络新闻的主要指标。网页浏览数是评价网站流量最常用的指标之一，简称为PV。监测网站PV的变化趋势和分析其变化原因是很多站长定期要做的工作。 Page Views中的Page一般是指普通的html网页，也包含php、jsp等动态产生的html内容。来自浏览器的一次html内容请求会被看作一个PV，逐渐累计成为PV总数。<br>2、分离: 是指由于网站访问量过大，把图片、静态页面、动态处理，分为不同的服务器来处理，从而减轻服务器压力。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Fancy WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Fancy Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网站带宽/" rel="tag"># 网站带宽</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/07/31/mailgun优秀的邮件服务器/" rel="next" title="mailgun优秀的邮件服务器">
+                <i class="fa fa-chevron-left"></i> mailgun优秀的邮件服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/23/Centos 挂在数据磁盘/" rel="prev" title="Centos挂载数据盘">
+                Centos挂载数据盘 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/08/13/关于网站大少带宽合适/"
+           data-title="关于网站大少带宽合适" data-url="http://yoursite.com/2014/08/13/关于网站大少带宽合适/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Fancy" />
+          <p class="site-author-name" itemprop="name">Fancy</p>
+          <p class="site-description motion-element" itemprop="description">Just a Blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jwangkun" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/jwangkun" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jwangkun" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/jwangkun" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2013 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fancy</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"dev-fany"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
