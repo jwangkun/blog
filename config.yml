@@ -1,0 +1,30 @@
+# 是否为组织项目
+organization: false
+
+# 文章排序，依据更新时间还是创建时间
+# 值为 'UPDATED_AT' 或者 'CREATED_AT'
+order: 'UPDATED_AT'
+
+# 网站标题
+title: Fancy
+
+# GitHub 用户名或者组织名
+user: jwangkun
+
+# 项目名称，项目里面的 issues 是你的博客内容
+# 如果你的项目是组织项目，请设置 'organization' 为 true
+repository: jwangkun.github.io
+
+# 多用户设置，上面设置的 user 用户名默认已经包括
+# 多用户名字必须用 ',' 分割
+# 例子: author0,author1
+authors:
+
+# token 设置
+# token 必须以 '#' 分割
+# 如果你的 token 是 5c31bffc137f44faf7efc4a84da827g7ca2cfeaa 
+# 那么这里填入的值为 5#c31bffc137f44faf7efc4a84da827g7ca2cfeaa
+token: 9#27a4e82eaeb47df950dcf8e81f8cadf44ceff9b
+
+# 文章列表分页
+perpage: 10
